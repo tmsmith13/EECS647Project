@@ -43,6 +43,63 @@ INSERT INTO employees(
     12345,
     '600-500-7000'
 );
+INSERT INTO employees(
+    first_name,
+    last_name,
+    ssn,
+    date_of_birth,
+    email,
+    street,
+    zip,
+    phone_number
+) VALUES (
+    'Dawit',
+    'Askabe',
+    '234567890',
+    '2011-11-08',
+    'Dawit.Askabe@JoesDealership.com',
+    'Thomas',
+    12345,
+    '600-500-7000'
+);
+INSERT INTO employees(
+    first_name,
+    last_name,
+    ssn,
+    date_of_birth,
+    email,
+    street,
+    zip,
+    phone_number
+) VALUES (
+    'Jason',
+    'Held',
+    '345678901',
+    '2011-11-07',
+    'Jason.Held@JoesDealership.com',
+    'Washington',
+    12345,
+    '600-500-7000'
+);
+INSERT INTO employees(
+    first_name,
+    last_name,
+    ssn,
+    date_of_birth,
+    email,
+    street,
+    zip,
+    phone_number
+) VALUES (
+    'Trevor',
+    'Smith',
+    '456789012',
+    '2011-11-06',
+    'Trevor.Smith@JoesDealership.com',
+    'Roosevelt',
+    12345,
+    '600-500-7000'
+);
 
 INSERT INTO sales(
     customer_id,
