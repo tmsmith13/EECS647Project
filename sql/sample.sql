@@ -23,3 +23,23 @@ INSERT INTO customers(
     12345,
     '316-321-4567'
 );
+
+INSERT INTO employees(
+    first_name,
+    last_name,
+    ssn,
+    date_of_birth,
+    email,
+    street,
+    zip,
+    phone_number
+) VALUES (
+    'Jason',
+    'Eslick',
+    '123456789',
+    '2011-11-09',
+    'Jason.Eslick@JoesDealership.com',
+    'Bernard',
+    12345,
+    '600-500-7000'
+);
