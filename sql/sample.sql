@@ -40,7 +40,8 @@ INSERT INTO vehicles(
     fuel_tank_size,
     dealer_purchase_price,
     advertised_sale_price,
-    miles
+    miles,
+	date_recieved
 ) VALUES (
     1,
     1,
@@ -55,7 +56,8 @@ INSERT INTO vehicles(
     2,
     12000.50,
     26000.75,
-    5
+    5,
+	'2010-11-01'
 );
 
 INSERT INTO features(
