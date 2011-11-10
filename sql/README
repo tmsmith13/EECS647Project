@@ -1,0 +1,11 @@
+This README file describes how to use the .sql files.
+
+To load the schema:
+bash$ mysql -h hostname -u username -ppassword database < schema.sql
+or
+mysql> source path/to/schema.sql
+
+To load the sample data:
+bash$ mysql -h hostname -u username -ppassword database < schema.sql
+or
+mysql> source path/to/sample.sql
