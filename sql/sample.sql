@@ -43,3 +43,19 @@ INSERT INTO employees(
     12345,
     '600-500-7000'
 );
+
+INSERT INTO sales(
+    customer_id,
+    employee_id,
+    vehicle_id,
+    subtotal,
+    total,
+    commission
+) VALUES (
+    1,
+    1,
+    1,
+    50.59,
+    43987.00,
+    30000.00
+);

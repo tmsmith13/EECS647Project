@@ -45,4 +45,23 @@ CREATE TABLE employees (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS sales;
+CREATE TABLE sales (
+    sale_id         INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    customer_id     INT             NOT NULL,
+    employee_id     INT             NOT NULL,
+    vehicle_id      INT             NOT NULL,
+    subtotal        DECIMAL(9,2)    NOT NULL,
+    total           DECIMAL(9,2)    NOT NULL,
+    commission      DECIMAL(9,2)    NOT NULL    DEFAULT 0.0,
+    FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (employee_id)
+        REFERENCES employees(employee_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT
+    -- TODO:  vehicle_id references vehicles(vehicle.id)
+) ENGINE=InnoDB
+;
+
 SET foreign_key_checks = 1;
