@@ -120,4 +120,17 @@ CREATE TABLE sales (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS transactions;
+CREATE TABLE transactions (
+    transaction_id  INT             NOT NULL    AUTO_INCREMENT,
+    sale_id         INT             NOT NULL,
+    payment_amount  DECIMAL(9,2)    NOT NULL,
+    transaction_date DATE           NOT NULL,
+    PRIMARY KEY (transaction_id, sale_id),
+    FOREIGN KEY (sale_id)
+        REFERENCES sales(sale_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB
+;
+
 SET foreign_key_checks = 1;

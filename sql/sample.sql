@@ -175,4 +175,23 @@ INSERT INTO sales(
     30000.00
 );
 
+INSERT INTO transactions(
+    sale_id,
+    payment_amount,
+    transaction_date
+) VALUES (
+    1,
+    100,
+    '2011-11-11'
+);
+INSERT INTO transactions(
+    sale_id,
+    payment_amount,
+    transaction_date
+) VALUES (
+    1,
+    200,
+    '2011-11-12'
+);
+
 SET foreign_key_checks = 1;
