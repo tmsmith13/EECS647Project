@@ -184,16 +184,6 @@ INSERT INTO transactions(
     100,
     '2011-11-11'
 );
-INSERT INTO transactions(
-    sale_id,
-    payment_amount,
-    transaction_date
-) VALUES (
-    1,
-    200,
-    '2011-11-12'
-);
-
 INSERT INTO card_transactions(
     transaction_id,
     card_type,
@@ -205,11 +195,37 @@ INSERT INTO card_transactions(
     '1234876590126543',
     '2011-12-01'
 );
-
+INSERT INTO transactions(
+    sale_id,
+    payment_amount,
+    transaction_date
+) VALUES (
+    1,
+    200,
+    '2011-11-12'
+);
 INSERT INTO cash_transactions(
     transaction_id
 ) VALUES (
     2
+);
+INSERT INTO transactions(
+    sale_id,
+    payment_amount,
+    transaction_date
+) VALUES (
+    1,
+    300,
+    '2011-11-13'
+);
+INSERT INTO check_transactions(
+    transaction_id,
+    routing_number,
+    account_number
+) VALUES (
+    3,
+    '123987654',
+    '1234567890'
 );
 
 SET foreign_key_checks = 1;

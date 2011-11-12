@@ -154,4 +154,15 @@ CREATE TABLE cash_transactions (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS check_transactions;
+CREATE TABLE check_transactions (
+    transaction_id  INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    routing_number  VARCHAR(15)     NOT NULL,
+    account_number  VARCHAR(15)     NOT NULL,
+    FOREIGN KEY (transaction_id)
+        REFERENCES transactions(transaction_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB
+;
+
 SET foreign_key_checks = 1;
