@@ -206,4 +206,10 @@ INSERT INTO card_transactions(
     '2011-12-01'
 );
 
+INSERT INTO cash_transactions(
+    transaction_id
+) VALUES (
+    2
+);
+
 SET foreign_key_checks = 1;

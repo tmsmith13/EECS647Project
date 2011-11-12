@@ -145,4 +145,13 @@ CREATE TABLE card_transactions (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS cash_transactions;
+CREATE TABLE cash_transactions (
+    transaction_id  INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY (transaction_id)
+        REFERENCES transactions(transaction_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB
+;
+
 SET foreign_key_checks = 1;
