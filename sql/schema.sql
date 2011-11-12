@@ -24,44 +24,6 @@ CREATE TABLE customers (
 ) ENGINE=InnoDB
 ;
 
-DROP TABLE IF EXISTS vehicles;
-CREATE TABLE vehicles (
-    vehicle_id            INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
-    model_id              INT             NOT NULL,
-    engine_id             INT             NOT NULL,
-    transmission_id       INT             NOT NULL,
-    brake_id              INT             NOT NULL,
-    vin                   VARCHAR(25)     NOT NULL,
-    model_year            YEAR            NOT NULL,
-    vehicle_condition     VARCHAR(12)     NOT NULL,
-    body_color            VARCHAR(20)     NOT NULL,
-    hwy_mpg               FLOAT           NOT NULL,
-    city_mpg              FLOAT           NOT NULL,
-    fuel_tank_size        INT UNSIGNED    NOT NULL,
-    dealer_purchase_price FLOAT           NOT NULL,
-    advertised_sale_price FLOAT           NOT NULL,
-    miles                 INT UNSIGNED    NOT NULL,
-	date_recieved         DATE            NOT NULL,
-    INDEX (vin),
-    INDEX (model_id), -- Might not be needed
-    FOREIGN KEY (vehicle_id)
-        REFERENCES features(vehicle_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (model_id)
-        REFERENCES models(model_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (engine_id)
-        REFERENCES engines(engine_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (model_id)
-        REFERENCES transmissions(transmission_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (brake_id)
-        REFERENCES brakes(brake_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB
-;
-
 DROP TABLE IF EXISTS employees;
 CREATE TABLE employees (
     employee_id     INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
@@ -83,6 +45,44 @@ CREATE TABLE employees (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS vehicles;
+CREATE TABLE vehicles (
+    vehicle_id            INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    model_id              INT             NOT NULL,
+    engine_id             INT             NOT NULL,
+    transmission_id       INT             NOT NULL,
+    brake_id              INT             NOT NULL,
+    vin                   VARCHAR(25)     NOT NULL,
+    model_year            YEAR            NOT NULL,
+    vehicle_condition     VARCHAR(12)     NOT NULL,
+    body_color            VARCHAR(20)     NOT NULL,
+    hwy_mpg               FLOAT           NOT NULL,
+    city_mpg              FLOAT           NOT NULL,
+    fuel_tank_size        INT UNSIGNED    NOT NULL,
+    dealer_purchase_price FLOAT           NOT NULL,
+    advertised_sale_price FLOAT           NOT NULL,
+    miles                 INT UNSIGNED    NOT NULL,
+    date_recieved         DATE            NOT NULL,
+    INDEX (vin),
+    INDEX (model_id), -- Might not be needed
+    FOREIGN KEY (vehicle_id)
+        REFERENCES features(vehicle_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (model_id)
+        REFERENCES models(model_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (engine_id)
+        REFERENCES engines(engine_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (model_id)
+        REFERENCES transmissions(transmission_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (brake_id)
+        REFERENCES brakes(brake_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB
+;
+
 DROP TABLE IF EXISTS features;
 CREATE TABLE features (
     vehicle_id       INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
@@ -97,7 +97,7 @@ CREATE TABLE features (
     sunroof          BOOLEAN         NOT NULL,
     FOREIGN KEY (vehicle_id)
         REFERENCES vehicles(vehicle_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT
+        ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB
 ;
 
@@ -115,8 +115,55 @@ CREATE TABLE sales (
         ON UPDATE CASCADE ON DELETE RESTRICT,
     FOREIGN KEY (employee_id)
         REFERENCES employees(employee_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (vehicle_id)
+        REFERENCES vehicles(vehicle_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
-    -- TODO:  vehicle_id references vehicles(vehicle.id)
+) ENGINE=InnoDB
+;
+
+DROP TABLE IF EXISTS transactions;
+CREATE TABLE transactions (
+    transaction_id  INT             NOT NULL    AUTO_INCREMENT,
+    sale_id         INT             NOT NULL,
+    payment_amount  DECIMAL(9,2)    NOT NULL,
+    transaction_date DATE           NOT NULL,
+    PRIMARY KEY (transaction_id, sale_id),
+    FOREIGN KEY (sale_id)
+        REFERENCES sales(sale_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB
+;
+
+DROP TABLE IF EXISTS card_transactions;
+CREATE TABLE card_transactions (
+    transaction_id  INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    card_type       VARCHAR(20)     NOT NULL,
+    card_number     VARCHAR(20)     NOT NULL,
+    card_expiration DATE            NOT NULL,
+    FOREIGN KEY (transaction_id)
+        REFERENCES transactions(transaction_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB
+;
+
+DROP TABLE IF EXISTS cash_transactions;
+CREATE TABLE cash_transactions (
+    transaction_id  INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY (transaction_id)
+        REFERENCES transactions(transaction_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB
+;
+
+DROP TABLE IF EXISTS check_transactions;
+CREATE TABLE check_transactions (
+    transaction_id  INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    routing_number  VARCHAR(15)     NOT NULL,
+    account_number  VARCHAR(15)     NOT NULL,
+    FOREIGN KEY (transaction_id)
+        REFERENCES transactions(transaction_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB
 ;
 
