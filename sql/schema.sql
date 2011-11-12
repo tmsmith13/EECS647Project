@@ -115,8 +115,10 @@ CREATE TABLE sales (
         ON UPDATE CASCADE ON DELETE RESTRICT,
     FOREIGN KEY (employee_id)
         REFERENCES employees(employee_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (vehicle_id)
+        REFERENCES vehicles(vehicle_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
-    -- TODO:  vehicle_id references vehicles(vehicle.id)
 ) ENGINE=InnoDB
 ;
 
