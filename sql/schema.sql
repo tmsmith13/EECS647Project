@@ -97,7 +97,7 @@ CREATE TABLE features (
     sunroof          BOOLEAN         NOT NULL,
     FOREIGN KEY (vehicle_id)
         REFERENCES vehicles(vehicle_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT
+        ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB
 ;
 
@@ -130,6 +130,18 @@ CREATE TABLE transactions (
     FOREIGN KEY (sale_id)
         REFERENCES sales(sale_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB
+;
+
+DROP TABLE IF EXISTS card_transactions;
+CREATE TABLE card_transactions (
+    transaction_id  INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    card_type       VARCHAR(20)     NOT NULL,
+    card_number     VARCHAR(20)     NOT NULL,
+    card_expiration DATE            NOT NULL,
+    FOREIGN KEY (transaction_id)
+        REFERENCES transactions(transaction_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB
 ;
 

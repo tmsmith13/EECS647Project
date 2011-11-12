@@ -194,4 +194,16 @@ INSERT INTO transactions(
     '2011-11-12'
 );
 
+INSERT INTO card_transactions(
+    transaction_id,
+    card_type,
+    card_number,
+    card_expiration
+) VALUES (
+    1,
+    'visa',
+    '1234876590126543',
+    '2011-12-01'
+);
+
 SET foreign_key_checks = 1;
