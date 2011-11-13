@@ -62,6 +62,20 @@ CREATE TABLE makes (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS models;
+CREATE TABLE models (
+    model_id            INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    model_name          VARCHAR(40)     NOT NULL,
+    make_id             INT             NOT NULL,
+    trim                VARCHAR(20)     NOT NULL,
+    body_type           VARCHAR(24)     NOT NULL,
+    INDEX (model_name),
+    FOREIGN KEY (make_id)
+        REFERENCES makes(make_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB
+;
+
 DROP TABLE IF EXISTS vehicles;
 CREATE TABLE vehicles (
     vehicle_id            INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,

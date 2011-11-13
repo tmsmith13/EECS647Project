@@ -119,6 +119,18 @@ INSERT INTO makes(
     'Honda'
 );
 
+INSERT INTO models(
+    model_name,
+    make_id,
+    trim,
+    body_type
+) VALUES (
+    'Civic',
+    1,
+    'DX',
+    'Coupe'
+);
+
 INSERT INTO vehicles(
     model_id,
     engine_id,
