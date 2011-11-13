@@ -45,6 +45,15 @@ CREATE TABLE employees (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS brakes;
+CREATE TABLE brakes (
+    brake_id            INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    brake_abs_system    INT(1)          NOT NULL    DEFAULT 1,
+    front_brake_type    INT(1)          NOT NULL    DEFAULT 1,
+    rear_brake_type     INT(1)          NOT NULL    DEFAULT 1
+) ENGINE=InnoDB
+;
+
 DROP TABLE IF EXISTS vehicles;
 CREATE TABLE vehicles (
     vehicle_id            INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,

@@ -103,6 +103,16 @@ INSERT INTO employees(
     '600-500-7000'
 );
 
+INSERT INTO brakes(
+    brake_abs_system,
+    front_brake_type,
+    rear_brake_type
+) VALUES (
+    1,
+    1,
+    1
+);
+
 INSERT INTO vehicles(
     model_id,
     engine_id,
