@@ -113,6 +113,12 @@ INSERT INTO brakes(
     1
 );
 
+INSERT INTO makes(
+    make_name
+) VALUES (
+    'Honda'
+);
+
 INSERT INTO vehicles(
     model_id,
     engine_id,

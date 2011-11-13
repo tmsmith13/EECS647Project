@@ -54,6 +54,14 @@ CREATE TABLE brakes (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS makes;
+CREATE TABLE makes (
+    make_id             INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    make_name           VARCHAR(40)     NOT NULL,
+    INDEX (make_name)
+) ENGINE=InnoDB
+;
+
 DROP TABLE IF EXISTS vehicles;
 CREATE TABLE vehicles (
     vehicle_id            INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
