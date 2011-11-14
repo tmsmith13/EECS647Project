@@ -29,15 +29,15 @@ CREATE TABLE employees (
     employee_id     INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
     first_name      VARCHAR(50)     NOT NULL,
     last_name       VARCHAR(50)     NOT NULL,
-    password        CHAR(40)        NOT NULL DEFAULT "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8",
+    password        CHAR(40)        NOT NULL    DEFAULT "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8",
     ssn             CHAR(9)         NOT NULL,
     date_of_birth   DATE            NOT NULL,
     email           VARCHAR(40)     NOT NULL,
     street          VARCHAR(50)     NOT NULL,
     zip             INT(2) UNSIGNED NOT NULL,
     phone_number    VARCHAR(25),
-    manager_flag    INT(1)          NOT NULL DEFAULT 0,
-    active_account  INT(1)          NOT NULL DEFAULT 1,
+    manager_flag    INT(1)          NOT NULL    DEFAULT 0,
+    active_account  INT(1)          NOT NULL    DEFAULT 1,
     INDEX (last_name),
     FOREIGN KEY (zip)
         REFERENCES locations(zip)
@@ -51,6 +51,15 @@ CREATE TABLE brakes (
     brake_abs_system    INT(1)          NOT NULL    DEFAULT 1,
     front_brake_type    INT(1)          NOT NULL    DEFAULT 1,
     rear_brake_type     INT(1)          NOT NULL    DEFAULT 1
+) ENGINE=InnoDB
+;
+
+DROP TABLE IF EXISTS transmissions;
+CREATE TABLE transmissions (
+    transmission_id     INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    drivetrain          VARCHAR(20)     NOT NULL,
+    transmission_type   VARCHAR(20)     NOT NULL,
+    num_gears           INT             NOT NULL
 ) ENGINE=InnoDB
 ;
 

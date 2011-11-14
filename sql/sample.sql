@@ -113,6 +113,16 @@ INSERT INTO brakes(
     1
 );
 
+INSERT INTO transmissions(
+    drivetrain,
+    transmission_type,
+    num_gears
+) VALUES (
+    'fwd',
+    'Manual',
+    5
+);
+
 INSERT INTO makes(
     make_name
 ) VALUES (
