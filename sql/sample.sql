@@ -132,7 +132,7 @@ INSERT INTO engines(
     shape
 ) VALUES (
     1.57,
-    'what goes here?',
+    'gasoline',
     120,
     90,
     4,
