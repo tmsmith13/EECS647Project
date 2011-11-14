@@ -103,6 +103,60 @@ INSERT INTO employees(
     '600-500-7000'
 );
 
+INSERT INTO brakes(
+    brake_abs_system,
+    front_brake_type,
+    rear_brake_type
+) VALUES (
+    1,
+    1,
+    1
+);
+
+INSERT INTO transmissions(
+    drivetrain,
+    transmission_type,
+    num_gears
+) VALUES (
+    'fwd',
+    'Manual',
+    5
+);
+
+INSERT INTO engines(
+    displacement,
+    fuel_system,
+    horsepower,
+    torque,
+    cylinders,
+    shape
+) VALUES (
+    1.57,
+    'gasoline',
+    120,
+    90,
+    4,
+    'V-shaped'
+);
+
+INSERT INTO makes(
+    make_name
+) VALUES (
+    'Honda'
+);
+
+INSERT INTO models(
+    model_name,
+    make_id,
+    trim,
+    body_type
+) VALUES (
+    'Civic',
+    1,
+    'DX',
+    'Coupe'
+);
+
 INSERT INTO vehicles(
     model_id,
     engine_id,
