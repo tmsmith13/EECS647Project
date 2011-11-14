@@ -63,6 +63,18 @@ CREATE TABLE transmissions (
 ) ENGINE=InnoDB
 ;
 
+DROP TABLE IF EXISTS engines;
+CREATE TABLE engines (
+    engine_id           INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    displacement        DECIMAL         NOT NULL,
+    fuel_system         VARCHAR(20)     NOT NULL,
+    horsepower          INT             NOT NULL,
+    torque              INT             NOT NULL,
+    cylinders           INT,
+    shape               VARCHAR(20)     NOT NULL    DEFAULT "V-shaped"
+) ENGINE=InnoDB
+;
+
 DROP TABLE IF EXISTS makes;
 CREATE TABLE makes (
     make_id             INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,

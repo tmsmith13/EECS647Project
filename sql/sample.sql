@@ -123,6 +123,22 @@ INSERT INTO transmissions(
     5
 );
 
+INSERT INTO engines(
+    displacement,
+    fuel_system,
+    horsepower,
+    torque,
+    cylinders,
+    shape
+) VALUES (
+    1.57,
+    'what goes here?',
+    120,
+    90,
+    4,
+    'V-shaped'
+);
+
 INSERT INTO makes(
     make_name
 ) VALUES (
