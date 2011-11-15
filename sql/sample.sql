@@ -271,14 +271,16 @@ INSERT INTO sales(
     vehicle_id,
     subtotal,
     total,
-    commission
+    commission,
+    sale_date
 ) VALUES (
     1,
     1,
     1,
     50.59,
     43987.00,
-    30000.00
+    30000.00,
+    '2011-11-10'
 );
 
 INSERT INTO transactions(

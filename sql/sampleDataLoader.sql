@@ -22,6 +22,11 @@ FIELDS TERMINATED BY ','
 -- LOAD DATA LOCAL INFILE 'vehicles.csv'           INTO TABLE vehicles;
 
 -- LOAD DATA LOCAL INFILE 'sales.csv'              INTO TABLE sales;
+LOAD DATA LOCAL INFILE 'sales.csv'
+INTO TABLE sales
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(customer_id, employee_id, vehicle_id, subtotal, total, commission, sale_date);
 
 -- LOAD DATA LOCAL INFILE 'transactions.csv'       INTO TABLE transactions;
 
