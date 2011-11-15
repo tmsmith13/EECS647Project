@@ -30,7 +30,11 @@ FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (make_name);
 -- LOAD DATA LOCAL INFILE 'models.csv'             INTO TABLE models;
-
+LOAD DATA LOCAL INFILE 'models.csv'
+INTO TABLE models
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(model_name, make_id, trim, body_type);
 -- LOAD DATA LOCAL INFILE 'vehicles.csv'           INTO TABLE vehicles;
 
 LOAD DATA LOCAL INFILE 'sales.csv'
