@@ -1,15 +1,13 @@
 SET foreign_key_checks = 0;
 
+-- LOAD DATA LOCAL INFILE 'locations.csv'          INTO TABLE locations(zip,city,state);
+
 LOAD DATA LOCAL INFILE 'customers.csv'
 INTO TABLE customers
 FIELDS TERMINATED BY ','
 (first_name,last_name,date_of_birth,street,zip,phone_number);
 
--- LOAD DATA LOCAL INFILE 'locations.csv'          INTO TABLE locations(zip,city,state);
-
 -- LOAD DATA LOCAL INFILE 'employees.csv'          INTO TABLE employees(first_name,last_name,password,ssn,date_of_birth,email,street,zip,phone_number);
-
--- LOAD DATA LOCAL INFILE 'brakes.csv'             INTO TABLE brakes;
 
 LOAD DATA LOCAL INFILE 'brakes.csv'
 INTO TABLE brakes
@@ -23,12 +21,11 @@ FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (drivetrain, transmission_type, num_gears);
 
-
 LOAD DATA LOCAL INFILE 'engines.csv'
 INTO TABLE engines
 FIELDS TERMINATED BY ','
 IGNORE 1 LINES
-(displacement,fuel_system,horsepower,torque,cylinders,shape);
+(displacement, fuel_system, horsepower, torque, cylinders, shape);
 
 LOAD DATA LOCAL INFILE 'makes.csv'
 INTO TABLE makes
@@ -46,8 +43,8 @@ LOAD DATA LOCAL INFILE 'vehicles.csv'
 INTO TABLE vehicles
 FIELDS TERMINATED BY ','
 IGNORE I LINES
-(feature_set,model_id,engine_id,transmission_id,brake_id,vin,model_year,vehicle_condition,body_color,
-        hwy_mpg,city_mpg,fuel_tank_size,dealer_purchase_price,advertised-sale_price,miles,date_recieved);
+(feature_set, model_id, engine_id, transmission_id, brake_id, vin, model_year, vehicle_condition, body_color,
+         hwy_mpg, city_mpg, fuel_tank_size, dealer_purchase_price, advertised-sale_price, miles, date_recieved);
 
 LOAD DATA LOCAL INFILE 'sales.csv'
 INTO TABLE sales

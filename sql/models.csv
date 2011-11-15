@@ -1,3 +1,9 @@
 model_name,make_id,trim,body_type
-Accord,1,SE,Coupe
-SC2,4,SC2,Coupe
+Camry,9,XLE,Sedan
+Silverado,1,LTZ,Pick-up
+Accord,7,SE,Sedan
+SC2,2,SC2,Coupe
+Corolla,9,Sport,Coupe
+Civic,7,SE,Coupe
+IS,10,XLE,Coupe
+Explorer,0,LE,SUV
