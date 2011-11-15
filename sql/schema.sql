@@ -66,7 +66,7 @@ CREATE TABLE engines (
     horsepower          INT             NOT NULL,
     torque              INT             NOT NULL,
     cylinders           INT,
-    shape               VARCHAR(20)     NOT NULL    DEFAULT "V-shaped"
+    shape               VARCHAR(20)     NOT NULL    DEFAULT "V" -- or Inline or rotary
 );
 
 DROP TABLE IF EXISTS makes;

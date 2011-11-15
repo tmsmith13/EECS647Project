@@ -23,9 +23,13 @@ FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (drivetrain, transmission_type, num_gears);
 
--- LOAD DATA LOCAL INFILE 'engines.csv'            INTO TABLE engines;
 
--- LOAD DATA LOCAL INFILE 'makes.csv'              INTO TABLE makes;
+LOAD DATA LOCAL INFILE 'engines.csv'
+INTO TABLE engines
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(displacement,fuel_system,horsepower,torque,cylinders,shape);
+
 LOAD DATA LOCAL INFILE 'makes.csv'
 INTO TABLE makes
 FIELDS TERMINATED BY ','

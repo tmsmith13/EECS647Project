@@ -1,0 +1,10 @@
+displacement,fuel_system,horsepower,torque,cylinders,shape
+2.5,fuel-injected,170,160,4,V
+3.6,fuel-injected,270,275,6,Inline
+4.5,fuel-injected,400,410,8,V
+4.0,fuel-injected,320,340,8,V
+3.4,fuel-injected,300,290,6,V
+2.8,fuel-injected,180,170,4,V
+3.8,fuel-injected,260,270,6,Inline
+3.0,fuel-injected,250,260,6,V
+4.0,fuel-injected,340,350,8,V
