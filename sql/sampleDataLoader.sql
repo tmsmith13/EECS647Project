@@ -42,5 +42,10 @@ IGNORE 1 LINES
 -- LOAD DATA LOCAL INFILE 'cash_transactions.csv'  INTO TABLE cash_transactions;
 
 -- LOAD DATA LOCAL INFILE 'check_transactions.csv' INTO TABLE check_transactions;
+LOAD DATA LOCAL INFILE 'check_transactions.csv'
+INTO TABLE check_transactions
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(transaction_id,routing_number,account_number);
 
 SET foreign_key_checks = 1;
