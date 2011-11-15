@@ -10,7 +10,11 @@ FIELDS TERMINATED BY ','
 -- LOAD DATA LOCAL INFILE 'employees.csv'          INTO TABLE employees(first_name,last_name,password,ssn,date_of_birth,email,street,zip,phone_number);
 
 -- LOAD DATA LOCAL INFILE 'brakes.csv'             INTO TABLE brakes;
-
+LOAD DATA LOCAL INFILE 'brakes.csv'
+INTO TABLE brakes
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(brake_abs_system, front_brake_type, rear_brake_type);
 -- LOAD DATA LOCAL INFILE 'transmissions.csv'      INTO TABLE transmissions;
 
 -- LOAD DATA LOCAL INFILE 'engines.csv'            INTO TABLE engines;
