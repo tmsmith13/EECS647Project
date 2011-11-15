@@ -99,7 +99,7 @@ CREATE TABLE vehicles (
     brake_id              INT             NOT NULL,
     vin                   VARCHAR(25)     NOT NULL,
     model_year            YEAR            NOT NULL,
-    vehicle_condition     VARCHAR(12)     NOT NULL,
+    vehicle_condition     VARCHAR(12)     NOT NULL, -- new,used-clean,used-average,used-rough,salvage
     body_color            VARCHAR(20)     NOT NULL,
     hwy_mpg               FLOAT           NOT NULL,
     city_mpg              FLOAT           NOT NULL,

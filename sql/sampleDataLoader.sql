@@ -10,24 +10,31 @@ FIELDS TERMINATED BY ','
 -- LOAD DATA LOCAL INFILE 'employees.csv'          INTO TABLE employees(first_name,last_name,password,ssn,date_of_birth,email,street,zip,phone_number);
 
 -- LOAD DATA LOCAL INFILE 'brakes.csv'             INTO TABLE brakes;
+
 LOAD DATA LOCAL INFILE 'brakes.csv'
 INTO TABLE brakes
 FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (brake_abs_system, front_brake_type, rear_brake_type);
--- LOAD DATA LOCAL INFILE 'transmissions.csv'      INTO TABLE transmissions;
+
 LOAD DATA LOCAL INFILE 'transmissions.csv'
 INTO TABLE transmissions
 FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (drivetrain, transmission_type, num_gears);
+
 -- LOAD DATA LOCAL INFILE 'engines.csv'            INTO TABLE engines;
 
 -- LOAD DATA LOCAL INFILE 'makes.csv'              INTO TABLE makes;
 
 -- LOAD DATA LOCAL INFILE 'models.csv'             INTO TABLE models;
 
--- LOAD DATA LOCAL INFILE 'vehicles.csv'           INTO TABLE vehicles;
+LOAD DATA LOCAL INFILE 'vehicles.csv'
+INTO TABLE vehicles
+FIELDS TERMINATED BY ','
+IGNORE I LINES
+(feature_set,model_id,engine_id,transmission_id,brake_id,vin,model_year,vehicle_condition,body_color,
+        hwy_mpg,city_mpg,fuel_tank_size,dealer_purchase_price,advertised-sale_price,miles,date_recieved);
 
 LOAD DATA LOCAL INFILE 'sales.csv'
 INTO TABLE sales
@@ -46,6 +53,7 @@ IGNORE 1 LINES
 -- LOAD DATA LOCAL INFILE 'cash_transactions.csv'  INTO TABLE cash_transactions;
 
 -- LOAD DATA LOCAL INFILE 'check_transactions.csv' INTO TABLE check_transactions;
+
 LOAD DATA LOCAL INFILE 'check_transactions.csv'
 INTO TABLE check_transactions
 FIELDS TERMINATED BY ','
