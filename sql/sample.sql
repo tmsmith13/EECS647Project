@@ -1,4 +1,4 @@
-SET foreign_key_checks = 0; -- Has to be set or insert fails due to fk constraints
+-- SET foreign_key_checks = 0; -- Has to be set or insert fails due to fk constraints
 
 INSERT INTO locations(
     zip,
@@ -158,6 +158,7 @@ INSERT INTO models(
 );
 
 INSERT INTO vehicles(
+    feature_set,
     model_id,
     engine_id,
     transmission_id,
@@ -174,6 +175,7 @@ INSERT INTO vehicles(
     miles,
     date_recieved
 ) VALUES (
+    B'110010010',
     1,
     1,
     1,
@@ -332,4 +334,4 @@ INSERT INTO check_transactions(
     '1234567890'
 );
 
-SET foreign_key_checks = 1;
+-- SET foreign_key_checks = 1;

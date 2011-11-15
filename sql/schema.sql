@@ -66,7 +66,7 @@ CREATE TABLE transmissions (
 DROP TABLE IF EXISTS engines;
 CREATE TABLE engines (
     engine_id           INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
-    displacement        DECIMAL         NOT NULL,
+    displacement        FLOAT           NOT NULL,
     fuel_system         VARCHAR(20)     NOT NULL,
     horsepower          INT             NOT NULL,
     torque              INT             NOT NULL,
@@ -112,8 +112,8 @@ CREATE TABLE vehicles (
     hwy_mpg               FLOAT           NOT NULL,
     city_mpg              FLOAT           NOT NULL,
     fuel_tank_size        INT UNSIGNED    NOT NULL,
-    dealer_purchase_price FLOAT           NOT NULL,
-    advertised_sale_price FLOAT           NOT NULL,
+    dealer_purchase_price DECIMAL(9,2)    NOT NULL,
+    advertised_sale_price DECIMAL(9,2)    NOT NULL,
     miles                 INT UNSIGNED    NOT NULL,
     date_recieved         DATE            NOT NULL,
     INDEX (vin),
