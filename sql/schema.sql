@@ -16,7 +16,7 @@ CREATE TABLE customers (
     date_of_birth   DATE            NOT NULL,
     street          VARCHAR(50)     NOT NULL,
     zip             INT(2) UNSIGNED NOT NULL,
-    phone_number    VARCHAR(25),
+    phone_number    VARCHAR(16), -- Can be up to '+XX-YYY-ZZZ-ZZZZ'
     INDEX (last_name),
     FOREIGN KEY (zip)
         REFERENCES locations(zip)
@@ -35,7 +35,7 @@ CREATE TABLE employees (
     email           VARCHAR(40)     NOT NULL,
     street          VARCHAR(50)     NOT NULL,
     zip             INT(2) UNSIGNED NOT NULL,
-    phone_number    VARCHAR(25),
+    phone_number    VARCHAR(16), -- Can be up to '+XX-YYY-ZZZ-ZZZZ'
     manager_flag    INT(1)          NOT NULL    DEFAULT 0,
     active_account  INT(1)          NOT NULL    DEFAULT 1,
     INDEX (last_name),
@@ -149,6 +149,7 @@ CREATE TABLE sales (
     subtotal        DECIMAL(9,2)    NOT NULL,
     total           DECIMAL(9,2)    NOT NULL,
     commission      DECIMAL(9,2)    NOT NULL    DEFAULT 0.0,
+    sale_date       DATE            NOT NULL,
     FOREIGN KEY (customer_id)
         REFERENCES customers(customer_id)
         ON UPDATE CASCADE ON DELETE RESTRICT,
