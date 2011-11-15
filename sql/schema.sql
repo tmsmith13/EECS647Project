@@ -100,6 +100,7 @@ CREATE TABLE models (
 DROP TABLE IF EXISTS vehicles;
 CREATE TABLE vehicles (
     vehicle_id            INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    feature_set           BIT(9)          NOT NULL,
     model_id              INT             NOT NULL,
     engine_id             INT             NOT NULL,
     transmission_id       INT             NOT NULL,
@@ -116,10 +117,6 @@ CREATE TABLE vehicles (
     miles                 INT UNSIGNED    NOT NULL,
     date_recieved         DATE            NOT NULL,
     INDEX (vin),
-    INDEX (model_id), -- Might not be needed
-    FOREIGN KEY (vehicle_id)
-        REFERENCES features(vehicle_id)
-        ON UPDATE CASCADE ON DELETE RESTRICT,
     FOREIGN KEY (model_id)
         REFERENCES models(model_id)
         ON UPDATE CASCADE ON DELETE RESTRICT,
@@ -137,19 +134,9 @@ CREATE TABLE vehicles (
 
 DROP TABLE IF EXISTS features;
 CREATE TABLE features (
-    vehicle_id       INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
-    power_door       BOOLEAN         NOT NULL,
-    keyless_entry    BOOLEAN         NOT NULL,
-    rear_view_camera BOOLEAN         NOT NULL,
-    gps              BOOLEAN         NOT NULL,
-    power_window     BOOLEAN         NOT NULL,
-    satellite_radio  BOOLEAN         NOT NULL,
-    hybrid           BOOLEAN         NOT NULL,
-    window_tint      BOOLEAN         NOT NULL,
-    sunroof          BOOLEAN         NOT NULL,
-    FOREIGN KEY (vehicle_id)
-        REFERENCES vehicles(vehicle_id)
-        ON UPDATE CASCADE ON DELETE CASCADE
+       string_position TINYINT UNSIGNED NOT NULL PRIMARY KEY,
+       feature         VARCHAR(25)      NOT NULL,
+       INDEX (feature)
 ) ENGINE=InnoDB
 ;
 

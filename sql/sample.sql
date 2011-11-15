@@ -192,25 +192,75 @@ INSERT INTO vehicles(
 );
 
 INSERT INTO features(
-    power_door,
-    keyless_entry,
-    rear_view_camera,
-    gps,
-    power_window,
-    satellite_radio,
-    hybrid,
-    window_tint,
-    sunroof
+    string_position,
+    feature
+) VALUES (
+    0,
+    'Power Door'
+);
+
+INSERT INTO features(
+    string_position,
+    feature
 ) VALUES (
     1,
-    1,
-    0,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1
+    'Keyless Entry'
+);
+
+INSERT INTO features(
+    string_position,
+    feature
+) VALUES (
+    2,
+    'Rear View Camera'
+);
+
+INSERT INTO features(
+    string_position,
+    feature
+) VALUES (
+    3,
+    'GPS'
+);
+
+INSERT INTO features(
+    string_position,
+    feature
+) VALUES (
+    4,
+    'Power Window'
+);
+
+INSERT INTO features(
+    string_position,
+    feature
+) VALUES (
+    5,
+    'Satellite Radio'
+);
+
+INSERT INTO features(
+    string_position,
+    feature
+) VALUES (
+    6,
+    'Hybrid'
+);
+
+INSERT INTO features(
+    string_position,
+    feature
+) VALUES (
+    7,
+    'Window Tint'
+);
+
+INSERT INTO features(
+    string_position,
+    feature
+) VALUES (
+    8,
+    'Sunroof'
 );
 
 INSERT INTO sales(
