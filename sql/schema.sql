@@ -2,11 +2,10 @@ SET foreign_key_checks = 0;
 
 DROP TABLE IF EXISTS locations;
 CREATE TABLE locations (
-    zip             INT(2) UNSIGNED NOT NULL    AUTO_INCREMENT PRIMARY KEY,
+    zip             INT(2) UNSIGNED NOT NULL    PRIMARY KEY,
     city            VARCHAR(50)     NOT NULL,
     state           VARCHAR(50)     NOT NULL
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS customers;
 CREATE TABLE customers (
@@ -21,15 +20,14 @@ CREATE TABLE customers (
     FOREIGN KEY (zip)
         REFERENCES locations(zip)
         ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS employees;
 CREATE TABLE employees (
     employee_id     INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
     first_name      VARCHAR(50)     NOT NULL,
     last_name       VARCHAR(50)     NOT NULL,
-    password        CHAR(40)        NOT NULL    DEFAULT "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8",
+    password        BINARY(20)      NOT NULL    DEFAULT 0x5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8,
     ssn             CHAR(9)         NOT NULL,
     date_of_birth   DATE            NOT NULL,
     email           VARCHAR(40)     NOT NULL,
@@ -42,8 +40,7 @@ CREATE TABLE employees (
     FOREIGN KEY (zip)
         REFERENCES locations(zip)
         ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS brakes;
 CREATE TABLE brakes (
@@ -51,8 +48,7 @@ CREATE TABLE brakes (
     brake_abs_system    INT(1)          NOT NULL    DEFAULT 1,
     front_brake_type    INT(1)          NOT NULL    DEFAULT 1,
     rear_brake_type     INT(1)          NOT NULL    DEFAULT 1
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS transmissions;
 CREATE TABLE transmissions (
@@ -60,8 +56,7 @@ CREATE TABLE transmissions (
     drivetrain          VARCHAR(20)     NOT NULL,
     transmission_type   VARCHAR(20)     NOT NULL,
     num_gears           INT             NOT NULL
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS engines;
 CREATE TABLE engines (
@@ -72,16 +67,14 @@ CREATE TABLE engines (
     torque              INT             NOT NULL,
     cylinders           INT,
     shape               VARCHAR(20)     NOT NULL    DEFAULT "V-shaped"
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS makes;
 CREATE TABLE makes (
     make_id             INT             NOT NULL    AUTO_INCREMENT PRIMARY KEY,
     make_name           VARCHAR(40)     NOT NULL,
     INDEX (make_name)
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS models;
 CREATE TABLE models (
@@ -94,8 +87,7 @@ CREATE TABLE models (
     FOREIGN KEY (make_id)
         REFERENCES makes(make_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS vehicles;
 CREATE TABLE vehicles (
@@ -129,16 +121,14 @@ CREATE TABLE vehicles (
     FOREIGN KEY (brake_id)
         REFERENCES brakes(brake_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS features;
 CREATE TABLE features (
        string_position TINYINT UNSIGNED NOT NULL PRIMARY KEY,
        feature         VARCHAR(25)      NOT NULL,
        INDEX (feature)
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS sales;
 CREATE TABLE sales (
@@ -159,8 +149,7 @@ CREATE TABLE sales (
     FOREIGN KEY (vehicle_id)
         REFERENCES vehicles(vehicle_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS transactions;
 CREATE TABLE transactions (
@@ -172,8 +161,7 @@ CREATE TABLE transactions (
     FOREIGN KEY (sale_id)
         REFERENCES sales(sale_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS card_transactions;
 CREATE TABLE card_transactions (
@@ -184,8 +172,7 @@ CREATE TABLE card_transactions (
     FOREIGN KEY (transaction_id)
         REFERENCES transactions(transaction_id)
         ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS cash_transactions;
 CREATE TABLE cash_transactions (
@@ -193,8 +180,7 @@ CREATE TABLE cash_transactions (
     FOREIGN KEY (transaction_id)
         REFERENCES transactions(transaction_id)
         ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB
-;
+);
 
 DROP TABLE IF EXISTS check_transactions;
 CREATE TABLE check_transactions (
@@ -204,7 +190,6 @@ CREATE TABLE check_transactions (
     FOREIGN KEY (transaction_id)
         REFERENCES transactions(transaction_id)
         ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB
-;
+);
 
 SET foreign_key_checks = 1;
