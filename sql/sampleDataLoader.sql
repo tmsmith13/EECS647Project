@@ -16,7 +16,11 @@ FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (brake_abs_system, front_brake_type, rear_brake_type);
 -- LOAD DATA LOCAL INFILE 'transmissions.csv'      INTO TABLE transmissions;
-
+LOAD DATA LOCAL INFILE 'transmissions.csv'
+INTO TABLE transmissions
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(drivetrain, transmission_type, num_gears);
 -- LOAD DATA LOCAL INFILE 'engines.csv'            INTO TABLE engines;
 
 -- LOAD DATA LOCAL INFILE 'makes.csv'              INTO TABLE makes;

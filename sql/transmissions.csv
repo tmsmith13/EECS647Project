@@ -1,0 +1,4 @@
+drivetrain,transmission_type,num_gears
+fwd,Automatic,0
+fwd,Manual,4
+fwd,Manual,6
