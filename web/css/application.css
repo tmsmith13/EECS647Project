@@ -1,0 +1,57 @@
+body {
+	font-family:	"Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:			#666;
+	padding:		10px;
+}
+
+h1 {
+	margin-top:	0;
+}
+
+ul {
+	list-style:	none;
+	padding:	0;
+	margin:		0;
+}
+
+li {
+	margin-bottom:	5px;
+	clear:			both;
+}
+
+label {
+	font-size:		10px;
+	font-weight:	bold;
+	text-transform:	uppercase;
+	display:		block;
+	margin-bottom:	3px;
+	clear:			both;
+}
+
+p.eg {
+	line-height:	5%;
+	margin-top:		0em;
+	margin-bottom:	2em;
+	font-size:		small;
+}
+
+.page {
+	margin: 0 auto;
+}
+
+.left_pane {
+	width:		280px;
+	background:	#ffffff url('../images/split.png') no-repeat right center;
+	float:		left;
+}
+
+.right_panel {
+	width:		500px;
+	height:		100%;
+	float:		left;
+	padding:	0px 20px 0px 20px;
+}
+
+.search_form {
+	padding:	0px 20px 0px 20px;
+}
