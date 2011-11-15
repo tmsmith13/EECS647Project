@@ -24,7 +24,11 @@ IGNORE 1 LINES
 -- LOAD DATA LOCAL INFILE 'engines.csv'            INTO TABLE engines;
 
 -- LOAD DATA LOCAL INFILE 'makes.csv'              INTO TABLE makes;
-
+LOAD DATA LOCAL INFILE 'makes.csv'
+INTO TABLE makes
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(make_name);
 -- LOAD DATA LOCAL INFILE 'models.csv'             INTO TABLE models;
 
 -- LOAD DATA LOCAL INFILE 'vehicles.csv'           INTO TABLE vehicles;
