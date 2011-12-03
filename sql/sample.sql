@@ -173,7 +173,7 @@ INSERT INTO vehicles(
     dealer_purchase_price,
     advertised_sale_price,
     miles,
-    date_recieved
+    date_received
 ) VALUES (
     B'110010010',
     1,

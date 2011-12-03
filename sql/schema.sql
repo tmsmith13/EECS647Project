@@ -107,7 +107,7 @@ CREATE TABLE vehicles (
     dealer_purchase_price DECIMAL(9,2)    NOT NULL,
     advertised_sale_price DECIMAL(9,2)    NOT NULL,
     miles                 INT UNSIGNED    NOT NULL,
-    date_recieved         DATE            NOT NULL,
+    date_received         DATE            NOT NULL,
     INDEX (vin),
     FOREIGN KEY (model_id)
         REFERENCES models(model_id)
