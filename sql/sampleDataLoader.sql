@@ -47,7 +47,7 @@ IGNORE 1 LINES
 LOAD DATA LOCAL INFILE 'vehicles.csv'
 INTO TABLE vehicles
 FIELDS TERMINATED BY ','
-IGNORE I LINES
+IGNORE 1 LINES
 (feature_set, model_id, engine_id, transmission_id, brake_id, vin, model_year, vehicle_condition, body_color,
          hwy_mpg, city_mpg, fuel_tank_size, dealer_purchase_price, advertised_sale_price, miles, date_recieved);
 
