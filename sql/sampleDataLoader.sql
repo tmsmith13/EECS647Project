@@ -68,7 +68,10 @@ IGNORE 1 LINES
 
 -- LOAD DATA LOCAL INFILE 'card_transactions.csv'  INTO TABLE card_transactions;
 
--- LOAD DATA LOCAL INFILE 'cash_transactions.csv'  INTO TABLE cash_transactions;
+LOAD DATA LOCAL INFILE 'cash_transactions.csv'
+INTO TABLE cash_transactions
+FIELDS TERMINATED BY ','
+(transaction_id);
 
 LOAD DATA LOCAL INFILE 'check_transactions.csv'
 INTO TABLE check_transactions
