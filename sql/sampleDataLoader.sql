@@ -12,7 +12,11 @@ FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (first_name, last_name, date_of_birth, street, zip, phone_number);
 
--- LOAD DATA LOCAL INFILE 'employees.csv'          INTO TABLE employees(first_name,last_name,password,ssn,date_of_birth,email,street,zip,phone_number);
+LOAD DATA LOCAL INFILE 'employees.csv'
+INTO TABLE employees
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(first_name, last_name, ssn, date_of_birth, email, street, zip);
 
 LOAD DATA LOCAL INFILE 'brakes.csv'
 INTO TABLE brakes
