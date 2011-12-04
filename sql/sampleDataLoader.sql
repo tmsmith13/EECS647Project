@@ -16,7 +16,7 @@ LOAD DATA LOCAL INFILE 'employees.csv'
 INTO TABLE employees
 FIELDS TERMINATED BY ','
 IGNORE 1 LINES
-(first_name, last_name, ssn, date_of_birth, email, street, zip);
+(first_name, last_name, ssn, date_of_birth, email, street, zip, phone_number);
 
 LOAD DATA LOCAL INFILE 'brakes.csv'
 INTO TABLE brakes
@@ -48,6 +48,12 @@ FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (model_name, make_id, trim, body_type);
 
+LOAD DATA LOCAL INFILE 'features.csv'
+INTO TABLE features
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(string_position,feature) ;
+
 LOAD DATA LOCAL INFILE 'vehicles.csv'
 INTO TABLE vehicles
 FIELDS TERMINATED BY ','
@@ -70,7 +76,11 @@ FIELDS TERMINATED BY ','
 IGNORE 1 LINES
 (sale_id, payment_amount, transaction_date);
 
--- LOAD DATA LOCAL INFILE 'card_transactions.csv'  INTO TABLE card_transactions;
+LOAD DATA LOCAL INFILE 'card_transactions.csv'
+INTO TABLE card_transactions
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(transaction_id,card_type,card_number,card_expiration);
 
 LOAD DATA LOCAL INFILE 'cash_transactions.csv'
 INTO TABLE cash_transactions

@@ -1,4 +1,8 @@
-first_name,last_name,ssn,date_of_birth,email,street,zip
-Allan,Prato,712451228,2011-12-01,allan.prato@JoesDealership.com,123 nowhere,12345
-Kelly,Alvin,812451229,2011-12-01,kelly.alvin@JoesDealership.com,654 nowhere,64656
-Serena,Gidley,185319189,2011-12-01,Serena.Gidley@JoesDealership.com,234 nowhere,64656
+first_name,last_name,ssn,date_of_birth,email,street,zip,phone_number
+Jason,Eslick,123456789,2011-11-09,Jason.Eslick@JoesDealership.com,Bernard,12345,600-500-7000
+Dawit,Askabe,234567890,2011-11-08,Dawit.Askabe@JoesDealership.com,Thomas,12345,600-500-7000
+Jason,Held,345678901,2011-11-07,Jason.Held@JoesDealership.com,Washington,12345,600-500-7000
+Trevor,Smith,456789012,2011-11-06,Trevor.Smith@JoesDealership.com,Roosevelt,12345,600-500-7000
+Allan,Prato,712451228,2011-12-01,allan.prato@JoesDealership.com,123 nowhere,12345,NULL
+Kelly,Alvin,812451229,2011-12-01,kelly.alvin@JoesDealership.com,654 nowhere,64656,NULL
+Serena,Gidley,185319189,2011-12-01,Serena.Gidley@JoesDealership.com,234 nowhere,64656,NULL
