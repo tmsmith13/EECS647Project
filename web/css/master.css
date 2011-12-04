@@ -1,0 +1,206 @@
+/* Makeshift CSS Reset */
+html,body,a,p,div,img,h1,h2,h3,h4,li,ul,dl,dd,dt,form,td,tr { 
+margin:0; padding:0; } 
+
+body {
+	/*font: 13px/22px Helvetica, Arial, sans-serif;*/
+	background: #8BB381;
+}
+
+A:link {color: #f0f0f0; font: 12pt Georgia, Arial serif;}
+A:visited {text-decoration: none}
+A:active {text-decoration: none}
+A:hover {text-decoration: underline; color: #A0A0A0;}
+
+
+
+/*-------------------------
+login popup box
+---------------------------*/
+#popupbox{
+	margin: 0; 
+	margin-left: 82%; 
+	margin-right: 1%;
+	margin-top: 30px; 
+	padding-top: 10px; 
+	width: 180px; 
+	height: 160px; 
+	position: absolute; 
+	background: #708890; 
+	border: solid #000000 2px; 
+	z-index: 9; 
+    font: 14pt/20pt Georgia, Arial serif;
+	visibility: hidden; 
+	color: #F0F8FF;
+}
+
+
+
+
+/*------------------------------
+Header and logo section
+------------------------------*/
+div.title_container{ 
+	
+	height: 40px;
+	background: url("../images/bar_brown.PNG");
+	padding:5px 20px 0px 0px;  /*top,right,bottom,left*/
+}
+/*-------------------------------
+navigation list
+---------------------------------*/
+ul#nav {
+	margin:0;
+	padding-top: 5px;
+	float:right;
+	width:200px;
+}
+ul#nav li {
+	display:inline;
+	padding:0;
+	margin:0;
+	color: #f0f0f0;
+}
+/*logo*/
+p#logo {
+	position: absolute;
+	margin: 0;  
+	margin-right: 2px;
+	margin-top: 2px;
+	padding-left:1cm;
+    color: #f0f0f0;
+	flaot:left;
+    font: 14pt/20pt Georgia, Arial serif;
+}
+
+
+/*------------------------------
+site containers setup
+------------------------------*/
+div.page_container{
+	width :100%;
+}
+
+div.main_body_container{
+    clear:both;
+	height: 100%;
+	padding:10px;
+	height:800px;
+}
+
+div.left_pane_container{
+	height: 100%;
+	width: 280px;
+	float:left;
+	padding:20px 0px 0px 15px;  /*top,right,bottom,left*/
+	margin:	2px;
+	vertical-align: top;	
+	background-color:#6495ed;
+}
+
+div.middle_pane_container{
+	height: 100%;
+	float:left;
+	padding:0;
+	margin:	5px;
+	vertical-align: top;
+	background-color:#D06820;
+}
+div.right_pane_container{
+	height: 100%;
+	width:280px;
+    float:right;
+	padding:0;
+	margin:	5px;
+	vertical-align: top;
+	background-color:#6495ed;
+}
+div.footer{
+	clear:both;
+	height: 100%;
+	padding:0;
+	margin:	0;
+	vertical-align: top;	
+	background-color:#6456ed;
+}
+
+
+/*------------------------
+*Left_pane car form format
+--------------------------*/
+p#db_car_search{
+    color: #f0f0f0;
+	flaot:left;
+    font:20pt Georgia, Arial serif;
+}
+.search_form {
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#666;
+	heigh:100%;
+}
+ul {
+	list-style:	none;
+	padding:	0;
+	margin:		0;
+}
+
+li {
+	margin-bottom:	5px;
+	clear:			both;
+}
+
+label {
+	font-size:		10px;
+	font-weight:	bold;
+	text-transform:	uppercase;
+	display:		block;
+	margin-bottom:	3px;
+	clear:			both;
+}
+p#db_title{ 
+	font: 14pt/20pt Georgia, Arial serif;
+	padding:	0;
+	margin:		0;
+	
+	
+}
+p#eg {
+	line-height:	5%;
+	margin-top:		0em;
+	margin-bottom:	2em;
+	font-size:		small;
+}
+
+/*------------------------------
+*result table
+------------------------------*/
+
+table.data {
+	border-width: 1px;
+	border-spacing: 2px;
+	border-style: dotted;
+	border-color: gray;
+	border-collapse: collapse;
+    cellpadding:10px;
+	background-color: white;
+    width:150px;
+}
+table.table_container{
+	border-width: 1px;
+    	padding: 5px;
+	border-spacing: 2px;
+	border-style: dotted;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+table.data td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+
+
