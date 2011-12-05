@@ -4,9 +4,9 @@ margin:0; padding:0; }
 
 body {
 	/*font: 13px/22px Helvetica, Arial, sans-serif;*/
-	background: #8BB381;
+	background: #E0E0E0;
 }
-
+html, body{height:100%;} 
 A:link {color: #f0f0f0; font: 12pt Georgia, Arial serif;}
 A:visited {text-decoration: none}
 A:active {text-decoration: none}
@@ -20,6 +20,11 @@ table.tabular th,
 table.tabular td {
 	padding-left:  0.25em;
 	padding-right: 0.25em;
+}
+
+div.middle_pane_container  fieldset {
+  padding: 0em;
+  font:80%/1 sans-serif;
 }
 
 /*-------------------------
@@ -77,7 +82,7 @@ p#logo {
 	margin-top: 2px;
 	padding-left:1cm;
     color: #f0f0f0;
-	flaot:left;
+	float:left;
     font: 14pt/20pt Georgia, Arial serif;
 }
 
@@ -94,34 +99,65 @@ div.main_body_container{
 	height: 100%;
 	padding:10px;
 	height:800px;
+	overflow: hidden;
 }
 
 div.left_pane_container{
-	height: 100%;
+	/*height: 100%;
 	width: 280px;
 	float:left;
-	padding:20px 0px 0px 15px;  /*top,right,bottom,left*/
+	padding:20px 0px 0px 15px;  /*top,right,bottom,left
 	margin:	2px;
 	vertical-align: top;	
-	background-color:#6495ed;
+	bbbackground-color:#827839;*/
+	padding:10px;
+	position: absolute;
+	left:10px;
+	width:260px;
+	border:1px solid #000;
+
+
 }
 
 div.middle_pane_container{
-	height: 100%;
+	/*height: 100%;
+	width:100px;
 	float:left;
-	padding:0;
-	margin:	5px;
+	position:relative;
+	padding:20px 0px 0px 15px;  /*top,right,bottom,left
+	margin:	2px;
 	vertical-align: top;
 	background-color:#D06820;
+	overflow: hidden;
+	*/
+	margin-left: 199px;
+	margin-right:199px;
+	margin-left: 201px;
+	margin-right:201px;
+
 }
+
+html>body #middle_pane_container{
+margin-left:300px;
+margin-right:305px;
+border:1px solid #000;
+	}
+
 div.right_pane_container{
+	/*position:relative;
 	height: 100%;
 	width:280px;
     float:right;
 	padding:0;
 	margin:	5px;
 	vertical-align: top;
-	background-color:#6495ed;
+	background-color:#6495ed;*/
+	position: absolute;
+	right:10px;
+	top:55px;
+	width:280px;
+	background:#fff;
+	border:1px solid #000;
 }
 div.footer{
 	clear:both;
@@ -137,14 +173,14 @@ div.footer{
 *Left_pane car form format
 --------------------------*/
 p#db_car_search{
-    color: #f0f0f0;
-	flaot:left;
+    color: #808080;
+	float:left;
     font:20pt Georgia, Arial serif;
 }
 .search_form {
 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	color:#666;
-	heigh:100%;
+	height:100%;
 }
 ul {
 	list-style:	none;
@@ -208,7 +244,6 @@ table.data td {
 	border-style: inset;
 	border-color: gray;
 	background-color: white;
-	-moz-border-radius: ;
 }
 
 

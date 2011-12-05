@@ -247,7 +247,13 @@
 							<label><input type="radio" name="radio" />Sunroof</label>
 						</li>
 						<li>
-							<input type="submit" />
+							<input name="button" type="button" onclick="javascript:get(
+									this.parentNode,
+									'process_car_form.php',
+									'middle_pane_container',
+									'someOtherDataYouWanttoSendToThePage' 
+									);" value="Send" />
+									
 							<input type="reset" />
 						</li>
 						</ul>
