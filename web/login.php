@@ -47,8 +47,7 @@ function __autoload($Connection) {
 	}
 	
 	//Query for username and password 
-	//$qry = "SELECT * FROM employees WHERE email='$login' AND password='".md5($_POST['password'])."'";
-	$qry = "SELECT * FROM employees WHERE last_name='$login' AND zip='$password'";
+	$qry = "SELECT ssn,first_name,last_name FROM employees WHERE email='$login' AND password=UNHEX('".sha1($password)."') LIMIT 1";
 	$result = mysql_query($qry);
 	
 	//Check whether the query was successful or not
