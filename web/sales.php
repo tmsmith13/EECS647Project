@@ -3,8 +3,9 @@ require_once('page_setup.php');
 $title = 'Sales';
 include('page_header.php');
 
-$page = param('page', 0);
-$perpage = param('perpage', 30);
+require_once('model.php');
+$page = clean_param($conn, 'page', 0);
+$perpage = clean_param($conn, 'perpage', 30);
 
 require_once('sale_model.php');
 $sales = SaleModel::GetSales(
