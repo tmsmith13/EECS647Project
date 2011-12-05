@@ -75,12 +75,18 @@ login popup box
 /*------------------------------
 Header and logo section
 ------------------------------*/
-div.title_container{
-
+div.title_container {
 	height: 40px;
 	background: url("../images/bar_brown.PNG");
-	padding:5px 20px 0px 0px;  /*top,right,bottom,left*/
+	padding: 5px 20px 0px 0px;
 }
+
+.title_container a,
+.title_container a:visited,
+.title_container a:active {
+	color:  #f0f0f0;
+}
+
 /*-------------------------------
 navigation list
 ---------------------------------*/
@@ -96,7 +102,8 @@ ul#nav li {
 	margin:0;
 	color: #f0f0f0;
 }
-/*logo*/
+
+/* logo */
 p#logo {
 	position: absolute;
 	margin: 0;
@@ -180,6 +187,7 @@ p#db_car_search{
 	color:#666;
 	height:100%;
 }
+
 ul {
 	list-style:	none;
 	padding:	0;
@@ -192,20 +200,20 @@ li {
 }
 
 label {
-	font-size:		10px;
-	font-weight:	bold;
-	text-transform:	uppercase;
-	display:		block;
-	margin-bottom:	3px;
-	clear:			both;
+	font-size:      0.9em;
+	font-weight:    bold;
+	text-transform: uppercase;
+	display:        block;
+	margin-bottom:  3px;
+	clear:          both;
 }
-p#db_title{
+
+p#db_title {
 	font: 14pt/20pt Georgia, Arial serif;
 	padding:	0;
 	margin:		0;
-
-
 }
+
 p#eg {
 	line-height:	5%;
 	margin-top:		0em;
