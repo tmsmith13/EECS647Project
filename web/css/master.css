@@ -12,7 +12,15 @@ A:visited {text-decoration: none}
 A:active {text-decoration: none}
 A:hover {text-decoration: underline; color: #A0A0A0;}
 
+.numerical {
+	text-align:  right;
+}
 
+table.tabular th,
+table.tabular td {
+	padding-left:  0.25em;
+	padding-right: 0.25em;
+}
 
 /*-------------------------
 login popup box

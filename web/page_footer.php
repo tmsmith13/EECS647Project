@@ -2,3 +2,4 @@
 	</div><!-- page_container -->
 </body>
 </html>
+<? if (isset($conn) && $conn) $conn->close() ?>
