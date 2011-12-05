@@ -1,12 +1,12 @@
 /* Makeshift CSS Reset */
-html,body,a,p,div,img,h1,h2,h3,h4,li,ul,dl,dd,dt,form,td,tr { 
-margin:0; padding:0; } 
+html,body,a,p,div,img,h1,h2,h3,h4,li,ul,dl,dd,dt,form,td,tr {
+	margin:0; padding:0; }
 
 body {
 	/*font: 13px/22px Helvetica, Arial, sans-serif;*/
 	background: #E0E0E0;
 }
-html, body{height:100%;} 
+html, body{height:100%;}
 A:link {color: #f0f0f0; font: 12pt Georgia, Arial serif;}
 A:visited {text-decoration: none}
 A:active {text-decoration: none}
@@ -19,10 +19,6 @@ A:hover {text-decoration: underline; color: #A0A0A0;}
 	text-decoration:none;
 }
 
-fieldset{
-	
-
-}
 .numerical {
 	text-align:  right;
 }
@@ -34,30 +30,31 @@ table.tabular td {
 }
 
 div.middle_pane_container  fieldset {
-  padding: 0em;
-  font:80%/1 sans-serif;
+	padding: 0em;
+	font:80%/1 sans-serif;
 }
 
-
-
+#userbox {
+	float:  right;
+}
 
 /*-------------------------
 login popup box
 ---------------------------*/
 #popupbox{
-	margin: 0; 
-	margin-left: 82%; 
+	margin: 0;
+	margin-left: 82%;
 	margin-right: 1%;
-	margin-top: 30px; 
-	padding-top: 10px; 
-	width: 180px; 
-	height: 160px; 
-	position: absolute; 
-	background: #708890; 
-	border: solid #000000 2px; 
-	z-index: 9; 
+	margin-top: 30px;
+	padding-top: 10px;
+	width: 180px;
+	height: 160px;
+	position: absolute;
+	background: #708890;
+	border: solid #000000 2px;
+	z-index: 9;
     font: 14pt/20pt Georgia, Arial serif;
-	visibility: hidden; 
+	visibility: hidden;
 	color: #F0F8FF;
 }
 
@@ -67,8 +64,8 @@ login popup box
 /*------------------------------
 Header and logo section
 ------------------------------*/
-div.title_container{ 
-	
+div.title_container{
+
 	height: 40px;
 	background: url("../images/bar_brown.PNG");
 	padding:5px 20px 0px 0px;  /*top,right,bottom,left*/
@@ -91,7 +88,7 @@ ul#nav li {
 /*logo*/
 p#logo {
 	position: absolute;
-	margin: 0;  
+	margin: 0;
 	margin-right: 2px;
 	margin-top: 2px;
 	padding-left:1cm;
@@ -108,22 +105,16 @@ div.page_container{
 	width :100%;
 }
 
-div.main_body_container{
-    clear:both;
+div.main_body_container {
+	position: relative;
+	clear: both;
 	height: 100%;
 	padding:10px;
-	height:800px;
+	height: 800px;
 	overflow: hidden;
 }
 
 div.left_pane_container{
-	/*height: 100%;
-	width: 280px;
-	float:left;
-	padding:20px 0px 0px 15px;  /*top,right,bottom,left
-	margin:	2px;
-	vertical-align: top;	
-	bbbackground-color:#827839;*/
 	padding:10px;
 	position: absolute;
 	left:10px;
@@ -134,16 +125,6 @@ div.left_pane_container{
 }
 
 div.middle_pane_container{
-	/*height: 100%;
-	width:100px;
-	float:left;
-	position:relative;
-	padding:20px 0px 0px 15px;  /*top,right,bottom,left
-	margin:	2px;
-	vertical-align: top;
-	background-color:#D06820;
-	overflow: hidden;
-	*/
 	margin-left: 199px;
 	margin-right:199px;
 	margin-left: 201px;
@@ -152,34 +133,26 @@ div.middle_pane_container{
 }
 
 html>body #middle_pane_container{
-margin-left:305px;
-margin-right:320px;
-border:1px solid #000;
-	}
-
-div.right_pane_container{
-	/*position:relative;
-	height: 100%;
-	width:280px;
-    float:right;
-	padding:0;
-	margin:	5px;
-	vertical-align: top;
-	background-color:#6495ed;*/
-	padding:10px;
-	position: absolute;
-	right:10px;
-	top:55px;
-	width:280px;
+	margin-left:305px;
+	margin-right:320px;
 	border:1px solid #000;
-	
 }
+
+div.right_pane_container {
+	position: absolute;
+	top:   10px;
+	right: 10px;
+	width: 280px;
+	padding: 10px;
+	border: 1px solid #000;
+}
+
 div.footer{
 	clear:both;
 	height: 100%;
 	padding:0;
 	margin:	0;
-	vertical-align: top;	
+	vertical-align: top;
 	background-color:#6456ed;
 }
 
@@ -215,12 +188,12 @@ label {
 	margin-bottom:	3px;
 	clear:			both;
 }
-p#db_title{ 
+p#db_title{
 	font: 14pt/20pt Georgia, Arial serif;
 	padding:	0;
 	margin:		0;
-	
-	
+
+
 }
 p#eg {
 	line-height:	5%;
@@ -245,7 +218,7 @@ table.data {
 }
 table.table_container{
 	border-width: 1px;
-    	padding: 5px;
+	padding: 5px;
 	border-spacing: 2px;
 	border-style: dotted;
 	border-color: gray;

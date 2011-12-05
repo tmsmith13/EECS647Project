@@ -1,66 +1,13 @@
-<!doctype html>  
-<html>  
-<head>  
-    <title>The Bug Makers Car Dealership</title> 
-	
-	<script type="text/javascript" src="js/jquery-1.2.3.pack.js"></script>
-	<script type="text/javascript" src="js/runonload.js"></script>
-	<script type="text/javascript" src="js/update.js"></script>
-	
-	<link rel="stylesheet" href="./css/master.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="./css/pretty_form.css" type="text/css" media="screen" /> 
-	
-	<script src="js/jquery.uniform.js" type="text/javascript" charset="utf-8"></script>
-
-	<script type="text/javascript" charset="utf-8">
-		function login(showhide)
-		{
-			if(showhide == "show")
-				document.getElementById('popupbox').style.visibility="visible";
-			else if(showhide == "hide")
-				document.getElementById('popupbox').style.visibility="hidden"; 
-		}
-	</script>
-
-    <style type="text/css" media="screen">
-    </style>
-
-</head>  
-<body>
-   
-
-   <div id="popupbox"> 	
-		<form name="Login" action="login.php" method="post">
-			<center>Username:</center>
-			<center><input name="username" size="25" /></center>
-			<center>Password:</center>
-			<center><input name="password" type="password" size="25" /></center>
-			<center><input type="submit" name="submit" value="Login" /></center>
-		</form>
-		<p id="result"></p>
-		<center><a href="javascript:login('hide');">close</a></center>
-	</div> <!--end popupbox-->
-	
-	
-	
-    <div id="page_container">    
-        
-		<div class="title_container">
-			<p id="logo">The Bug Makers Car Dealership</p>
-		
-			<ul id="nav">
-				<li id="login"><a href="javascript:login('show');">Login</a></li>
-			</ul>
-        </div> <!--end title_conatiner--> 
-		
-	
-        <div class="main_body_container">
-        
+<?php
+require_once('page_setup.php');
+$title = 'Vehicle Search';
+include('page_header.php');
+?>
 			<div class="left_pane_container">
 				<p id="db_car_search">Search Car Database</p>
-					
+
 				<div class="search_form">
-								
+
 				<form name="" method="post" action="">
 					<ul>
 						<li>
@@ -263,38 +210,35 @@
 							<input type="submit" class="button" id="submit_btn" value="Send" />
 							<input type="reset" value="reset"><br>
 						</li>
-					</ul>		
+					</ul>
 				</form>
 				</div><!--end search_form-->
-				
+
 			</div> <!--end left_pane_container-->
-			
-			
-			<div id="middle_pane_container">        
+
+
+			<div id="middle_pane_container">
 			search results will go here work in progress...
 			</div><!--end middle_pane_container-->
-			
-			
-			
+
+
+
+			<? if (check_login()): ?>
 			<div class="right_pane_container">
-				to see more, login! <br> username: Askabe | password: 12342  <br> its autenticating using zip as password at the moment			
-			</div> <!--end_rigt_pane_conatiner-->
-	    
+				<? include('other_searches.php') ?>
+			</div> <!--end_right_pane_container-->
+			<? endif ?>
+
         </div><!--main_body_container-->
-		
-		
+
 		<div class="footer">
 		This is footer : ignore the dev. colors of the page for now. It helps me see where things end/start.
 		If you are really board go here :  <a href="fail.html">something fun</a>  :))))
 		</div><!--end footer-->
-		
-		
-    </div><!--end page_container-->
-	
-	
-	
 
-    
-</body>  
+
+    </div><!--end page_container-->
+
+</body>
 
 </html>
