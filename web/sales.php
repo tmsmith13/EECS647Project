@@ -6,12 +6,12 @@ $title = 'Sales';
 include('page_header.php');
 
 require_once('model.php');
-$page = clean_param($conn, 'page', 0);
+$page = clean_param($conn, 'page', 1);
 $perpage = clean_param($conn, 'perpage', 30);
 
 require_once('sale_model.php');
 $sales = SaleModel::GetSales(
-		$page * $perpage,
+		($page - 1) * $perpage,
 		$perpage,
 		array('employees', 'vehicles', 'models', 'makes'),
 		array(

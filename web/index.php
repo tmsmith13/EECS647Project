@@ -1,6 +1,7 @@
 <?php
 require_once('page_setup.php');
 $title = 'Vehicle Search';
+$javascripts = array('jquery.form', 'other_searches');
 include('page_header.php');
 ?>
 			<div class="left_pane_container">

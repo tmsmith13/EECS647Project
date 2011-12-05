@@ -17,4 +17,17 @@ class SaleModel extends Model {
 		return parent::Select('sales', $columns, $options);
 	}
 
+	public static function GetSale($id, $joins = array(), $additional_columns = array()) {
+		$columns = self::$default_columns;
+		$columns = array_merge($columns, $additional_columns);
+
+		$options = array(
+			'joins'      => $joins,
+			'conditions' => "sale_id = $id",
+			'limit'      => 1
+		);
+		$result = parent::Select('sales', $columns, $options);
+		return empty($result) ? null : $result[0];
+	}
+
 }

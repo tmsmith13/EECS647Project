@@ -1,6 +1,6 @@
-$(function(){
-	$("input, textarea, select, button").uniform();
-});
+//$(function(){
+//	$("input, textarea, select, button").uniform();
+//});
 
 function login(showhide) {
 	if (showhide == "show")

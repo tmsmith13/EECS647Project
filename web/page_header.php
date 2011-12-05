@@ -7,11 +7,13 @@
 	<link rel="stylesheet" href="<?= $app_path ?>css/pretty_form.css" type="text/css" media="screen" />
 
 	<script type="text/javascript" src="<?= $app_path ?>js/jquery.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="<?= $app_path ?>js/jquery.uniform.js" charset="utf-8"></script>
-	<script type="text/javascript" src="<?= $app_path ?>js/jquery-1.2.3.pack.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/runonload.js"></script>
 	<script type="text/javascript" src="<?= $app_path ?>js/application.js" charset="utf-8"></script>
-	<script type="text/javascript" src="js/update.js"></script>
+	<? if (isset($javascripts)): ?>
+	<? foreach($javascripts as $js): ?>
+	<script type="text/javascript" src="<?= $app_path?>js/<?= $js ?>.js"></script>
+	<? endforeach ?>
+	<? endif ?>
 </head>
 <body>
 

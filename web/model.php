@@ -15,9 +15,13 @@ class Model {
 		// joins
 		$joins = '';
 		if (isset($options['joins'])) {
-			$joins = array();
-			foreach ($options['joins'] as $tablename) $joins[] = "NATURAL JOIN $tablename";
-			$joins = join("\n", $joins);
+			$joins = self::NaturalJoins($options['joins']);
+		}
+
+		// conditions
+		$conditions = '';
+		if (isset($options['conditions'])) {
+			$conditions = 'WHERE ' . self::Conditions($options['conditions']);
 		}
 
 		// order
@@ -29,18 +33,14 @@ class Model {
 		// start & limit
 		$limit = '';
 		if (isset($options['limit'])) {
-			$limit = 'LIMIT ';
-			$o_limit = $options['limit'];
-			if (is_array($o_limit))
-				$limit .= join(',', $o_limit);
-			else
-				$limit .= $o_limit;
+			$limit = 'LIMIT ' . self::LIMIT($options['limit']);
 		}
 
 		$query = "
 			SELECT $columns
 			FROM $from_table
 			$joins
+			$conditions
 			$order_by
 			$limit
 		";
@@ -60,6 +60,30 @@ class Model {
 			echo $conn->error;
 			return null;
 		}
+	}
+
+	public static function NaturalJoins($joins) {
+		$tmp = array();
+		foreach ($joins as $tablename) $tmp[] = "NATURAL JOIN $tablename";
+		return join("\n", $tmp);
+	}
+
+	public static function Conditions($conditions) {
+		if (!is_array($conditions))
+			return $conditions;
+
+		$tmp = array();
+		foreach($conditions as $c) {
+			$tmp[] = "($c)";
+		}
+		return join(' AND ', $tmp);
+	}
+
+	public static function Limit($limit) {
+		if (is_array($limit))
+			return 'LIMIT ' . join(',', $limit);
+		else
+			return $limit;
 	}
 
 }
