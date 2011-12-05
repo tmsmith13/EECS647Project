@@ -61,7 +61,7 @@
 					
 				<div class="search_form">
 								
-				<form name="car_search_form" method="post" action="">
+				<form name="" method="post" action="">
 					<ul>
 						<li>
 							<label>Make</label>

@@ -12,6 +12,17 @@ A:visited {text-decoration: none}
 A:active {text-decoration: none}
 A:hover {text-decoration: underline; color: #A0A0A0;}
 
+#logo a,
+#logo a:link,
+#logo a:visited {
+	color:#f0f0f0;
+	text-decoration:none;
+}
+
+fieldset{
+	
+
+}
 .numerical {
 	text-align:  right;
 }
@@ -26,6 +37,9 @@ div.middle_pane_container  fieldset {
   padding: 0em;
   font:80%/1 sans-serif;
 }
+
+
+
 
 /*-------------------------
 login popup box
@@ -138,8 +152,8 @@ div.middle_pane_container{
 }
 
 html>body #middle_pane_container{
-margin-left:300px;
-margin-right:305px;
+margin-left:305px;
+margin-right:320px;
 border:1px solid #000;
 	}
 
@@ -152,12 +166,13 @@ div.right_pane_container{
 	margin:	5px;
 	vertical-align: top;
 	background-color:#6495ed;*/
+	padding:10px;
 	position: absolute;
 	right:10px;
 	top:55px;
 	width:280px;
-	background:#fff;
 	border:1px solid #000;
+	
 }
 div.footer{
 	clear:both;
@@ -174,7 +189,6 @@ div.footer{
 --------------------------*/
 p#db_car_search{
     color: #808080;
-	float:left;
     font:20pt Georgia, Arial serif;
 }
 .search_form {

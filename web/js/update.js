@@ -26,7 +26,7 @@ $(function() {
 	
 	
 	var dataString = 'make='+ make + '&model=' + model + '&year=' + year;
-	alert (dataString);return false;
+	//alert (dataString);return false;
 	
 		$.ajax({
 			type: "POST",
