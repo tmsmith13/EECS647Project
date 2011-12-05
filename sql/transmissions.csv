@@ -1,5 +1,13 @@
 drivetrain,transmission_type,num_gears
 fwd,Manual,5
-fwd,Automatic,6
-fwd,Manual,4
 fwd,Manual,6
+fwd,Automatic,5
+fwd,Automatic,6
+rwd,Manual,5
+rwd,Manual,6
+rwd,Automatic,5
+rwd,Automatic,6
+4wd,Manual,5
+4wd,Manual,6
+4wd,Automatic,5
+4wd,Automatic,6
