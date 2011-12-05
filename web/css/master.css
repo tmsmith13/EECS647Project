@@ -51,24 +51,25 @@ div.middle_pane_container  fieldset {
 /*-------------------------
 login popup box
 ---------------------------*/
-#popupbox{
-	margin: 0;
-	margin-left: 82%;
-	margin-right: 1%;
-	margin-top: 30px;
-	padding-top: 10px;
-	width: 180px;
-	height: 160px;
-	position: absolute;
-	background: #708890;
-	border: solid #000000 2px;
-	z-index: 9;
-    font: 14pt/20pt Georgia, Arial serif;
+#popupbox {
+	position:  absolute;
+	z-index: 999;
+	right:  2em;
+	top:    50px;
+	width:  16em;
+	height: 7em;
+	padding: 1em;
 	visibility: hidden;
-	color: #F0F8FF;
+
+	background: #708890;
+	color:      #F0F8FF;
+	border:     solid #000000 2px;
+	font-size:  1.2em;
 }
 
-
+#popupbox div {
+	margin-bottom:  1em;
+}
 
 
 /*------------------------------
@@ -242,5 +243,3 @@ table.data td {
 	border-color: gray;
 	background-color: white;
 }
-
-
