@@ -33,7 +33,7 @@ class Model {
 		// start & limit
 		$limit = '';
 		if (isset($options['limit'])) {
-			$limit = 'LIMIT ' . self::LIMIT($options['limit']);
+			$limit = self::LIMIT($options['limit']);
 		}
 
 		$query = "
@@ -83,7 +83,7 @@ class Model {
 		if (is_array($limit))
 			return 'LIMIT ' . join(',', $limit);
 		else
-			return $limit;
+			return "LIMIT $limit";
 	}
 
 }
