@@ -1,8 +1,5 @@
 -- Transactions between certain dates, card transaction, payment_amount constraint, order descending
-SELECT transactions.*, transaction_type
-FROM (
-	 SELECT transaction_id, 'card transaction' AS transaction_type
-) trans
+SELECT transactions.*, 'card transaction' AS transaction_type FROM card_transactions
 NATURAL JOIN transactions
 WHERE transaction_date BETWEEN '2011-11-11' AND '2011-11-23' AND payment_amount > 100
 ORDER BY -payment_amount;
