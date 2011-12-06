@@ -9,7 +9,7 @@ function check_login() {
 }
 
 function clean_param($conn, $param, $default) {
-	return $conn->real_escape_string($_GET[$param]);
+	return isset($_GET[$param]) ? $conn->real_escape_string($_GET[$param]) : $default;
 }
 
 function clean_param_post($conn, $param, $default = null) {
