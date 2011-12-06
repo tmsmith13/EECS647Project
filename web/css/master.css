@@ -15,10 +15,10 @@ a:visited {text-decoration: none}
 a:active {text-decoration: none}
 a:hover {text-decoration: underline; color: #A0A0A0;}
 
-a.car_result_link_class {
+#car_result a {
 	color:maroon;
 }
-a.car_result_link_class:hover {
+#car_result a:hover {
 	opacity:.90;
 }
 
