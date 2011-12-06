@@ -81,7 +81,7 @@ while($row = mysql_fetch_assoc($result))
 		<tr>
 			<td><center><?= $car['vehicle_id'] ?></center></td>
 			<td>
-				<center><a href="<?= $apppath ?>car_details.php?vehicle_id=<?= $car['vehicle_id'] ?>">
+				<center><a href="<?= $apppath ?>car_details.php?vehicle_id=<?= $car['vehicle_id'] ?>" class="car_result_link_class">
 					<i><?= $car['vehicle_condition'] ?>&nbsp&nbsp</i>
 					<?= $car['model_year']." ".$car['make_name']." ".$car['model_name'] ?></a>
 				</center>
