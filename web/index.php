@@ -219,7 +219,10 @@ include('page_header.php');
 
 
 			<div id="middle_pane_container">
-			search results will go here work in progress...
+				<div id="place_holder">
+					<center><p id="db_car_search">Welcome to Billy Joe's <br>Car Dealership</p></center>
+					<center><small><i>Start Your Next Car Search here</i></small></center>
+				</div><!--end palce holder-->
 			</div><!--end middle_pane_container-->
 
 
@@ -231,11 +234,8 @@ include('page_header.php');
 			<? endif ?>
 
         </div><!--main_body_container-->
-
-		<div class="footer">
-		This is footer : ignore the dev. colors of the page for now. It helps me see where things end/start.
-		If you are really board go here :  <a href="fail.html">something fun</a>  :))))
-		</div><!--end footer-->
+		<br>
+		<?php include('page_footer.php'); ?>
 
 
     </div><!--end page_container-->

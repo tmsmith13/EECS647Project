@@ -13,36 +13,61 @@ $sale = SaleModel::GetSale(
 );
 ?>
 
-<div>
-	<span class="label">Sale ID:</span><?= $sale['sale_id'] ?>
-</div>
-<div>
-	<span class="label">Sale Date:</span><?= $sale['sale_date'] ?>
-</div>
-<div>
-	<span class="label">Customer Last:</span><?= $sale['custlast'] ?>
-</div>
-<div>
-	<span class="label">Customer First:</span><?= $sale['custfirst'] ?>
-</div>
-<div>
-	<span class="label">Vehicle Make:</span><?= $sale['make_name'] ?>
-</div>
-<div>
-	<span class="label">Vehicle Model:</span><?= $sale['model_name'] ?>
-</div>
-<div>
-	<span class="label">Vehicle Year:</span><?= $sale['model_year'] ?>
-</div>
-<div>
-	<span class="label">Vehicle VIN:</span><?= $sale['vin'] ?>
-</div>
-<div>
-	<span class="label">Subtotal:</span><?= $sale['subtotal'] ?>
-</div>
-<div>
-	<span class="label">Tax:</span><?= $sale['tax'] ?>
-</div>
-<div>
-	<span class="label">Total:</span><?= $sale['total'] ?>
+<div id ="sales_result_table">
+
+	<table id="salesT" border="2" text-align="center">	
+		<tr>
+			<td colspan="2" style="background-color:#616D7E"><b>Sale ID: <?= $sale['sale_id'] ?></td>
+		</tr>
+	
+		<tr>
+			<td><b>Sale Date:</b></td> 
+			<td><?= $sale['sale_date'] ?></td>
+		</tr>
+		
+		<tr>
+			<td><b>Customer Last:</b></td> 
+			<td><?= $sale['custlast'] ?></td>
+		</tr>
+
+		<tr>
+			<td><b>Customer First:</b></td> 
+			<td><?= $sale['custfirst'] ?></td>
+		</tr>
+
+		<tr>
+			<td><b>Vehicle Make:</b></td> 
+			<td><?= $sale['make_name'] ?></td>
+		</tr>
+		
+		<tr>
+			<td><b>Vehicle Model:</b></td> 
+			<td><?= $sale['model_name'] ?></td>
+		</tr>
+		
+		<tr>
+			<td><b>Vehicle Year:</b></td> 
+			<td><?= $sale['model_year'] ?></td>
+		</tr>
+		
+		<tr>
+			<td><b>Vehicle VIN:</b></td> 
+			<td><?= $sale['vin'] ?></td>
+		</tr>
+		
+		<tr>
+			<td><b>Subtotal:</b></td> 
+			<td><?= $sale['subtotal'] ?></td>
+		</tr>
+
+		<tr>
+			<td><b>Tax:</b></td> 
+			<td><?= $sale['tax'] ?></td>
+		</tr>
+		
+		<tr>
+			<td><b>Total:</b></td> 
+			<td><?= $sale['total'] ?></td>
+		</tr>
+	</table>
 </div>

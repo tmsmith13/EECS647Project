@@ -21,7 +21,7 @@ A:hover {text-decoration: underline; color: #A0A0A0;}
 
 label, .label {
 	display:  inline-block;
-	width:  10em;
+	/*width:  10em;*/
 	font-weight:  bold;
 }
 
@@ -126,9 +126,8 @@ div.page_container{
 div.main_body_container {
 	position: relative;
 	clear: both;
-	height: 100%;
 	padding:10px;
-	height: 800px;
+	height: 815px;
 	overflow: hidden;
 }
 
@@ -159,22 +158,34 @@ html>body #middle_pane_container{
 div.right_pane_container {
 	position: absolute;
 	top:   10px;
-	right: 10px;
+	right: 10px;x
 	width: 280px;
 	padding: 10px;
 	border: 1px solid #000;
 }
 
-div.footer{
+#footer{
 	clear:both;
-	height: 100%;
-	padding:0;
-	margin:	0;
+	height: auto;
+
 	vertical-align: top;
-	background-color:#6456ed;
+	background-color:#ADA96E;
+	font:12pt Georgia, Arial serif #000;
+	font-weight:bold;
 }
-
-
+/*-----------------------
+*center place holder
+--------------------------*/
+#place_holder{
+	border: 10px solid #ADA96E;
+	padding:20px;
+}
+/*-------------------------
+sales_result_table
+*/
+#sales_result_table{
+	cellpadding:10;
+}
 /*------------------------
 *Left_pane car form format
 --------------------------*/
@@ -224,6 +235,15 @@ p#eg {
 /*------------------------------
 *result table
 ------------------------------*/
+
+
+#salesT, td, th
+{
+border:2px solid #250000;
+border-collapse:collapse;
+padding:10px;
+width:100%;
+}
 
 table.data {
 	border-width: 1px;
