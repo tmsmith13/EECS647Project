@@ -1,5 +1,4 @@
 <?php
-require_once('session_check.php');
 include('db_config.php');
 
 $link = db_mysql_connect();
