@@ -1,5 +1,5 @@
 <div class ="search_form">
-	<p id="db_car_search">Search Sales Database</p><br/>
+	<h1>Search Sales Database</h1>
 	<div id="contact_form" class="gapbelow">
 		<form id="sales_form" method="post" action="<?= $app_path ?>sale.php">
 
@@ -12,7 +12,7 @@
 		</form>
 	</div>
 
-	<p id="db_car_search">Search Employee</p><br/>
+	<h1>Search Employee</h1>
 	<div id="contact_form">
 		<form name="contact" method="post" action="">
 

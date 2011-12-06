@@ -19,7 +19,7 @@
 
 	<div id="page_container">
 		<div class="title_container">
-			<p id="logo">The Bug Makers Car Dealership</p>
+			<p id="logo">Billy Joe's Car Dealership</p>
 			
 			<div id="userbox">
 				<? if (check_login()): ?>

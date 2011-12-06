@@ -14,11 +14,13 @@
 	float:  left;
 	margin:  0;
 	clear:  none;
+
+	font-size:  1.0em;
 }
 
 .navbar li a {
 	display: inline-block;
-	width:  9em;
+	width:  11em;
 	padding: 8px 15px;
 
 	text-decoration: none;

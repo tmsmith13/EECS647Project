@@ -5,7 +5,7 @@ $javascripts = array('jquery.form', 'other_searches');
 include('page_header.php');
 ?>
 			<div class="left_pane_container">
-				<p id="db_car_search">Search Car Database</p>
+				<h1>Search Car Database</h1>
 
 				<div class="search_form">
 
@@ -97,9 +97,9 @@ include('page_header.php');
 							</select>
 						</li>
 
-						<li><label>Model:</label><input type="text" name="model" id="model" size="31"/></li>
+						<li><label>Model:</label><input type="text" name="model" id="model" size="28"/></li>
 
-						<li><label>Year:</label><input type="text" name="year" id="year" size="31"/></li>
+						<li><label>Year:</label><input type="text" name="year" id="year" size="28"/></li>
 						<p id="eg"><sup>Example "1970, 2002-04"</sup></p>
 
 						<li>
@@ -217,15 +217,12 @@ include('page_header.php');
 
 			</div> <!--end left_pane_container-->
 
-
 			<div id="middle_pane_container">
-				<div id="place_holder">
-					<center><p id="db_car_search">Welcome to Billy Joe's <br>Car Dealership</p></center>
-					<center><small><i>Start Your Next Car Search here</i></small></center>
+				<div id="place_holder" style="text-align:center">
+					<h1>Welcome to Billy Joe's <br>Car Dealership</h1>
+					<i>Start Your Next Car Search here</i>
 				</div><!--end palce holder-->
 			</div><!--end middle_pane_container-->
-
-
 
 			<? if (check_login()): ?>
 			<div class="right_pane_container">
@@ -233,10 +230,8 @@ include('page_header.php');
 			</div> <!--end_right_pane_container-->
 			<? endif ?>
 
-        </div><!--main_body_container-->
-		<br>
+		</div><!--main_body_container-->
 		<?php include('page_footer.php'); ?>
-
 
     </div><!--end page_container-->
 
