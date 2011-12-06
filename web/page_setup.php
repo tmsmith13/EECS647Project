@@ -11,3 +11,7 @@ function check_login() {
 function clean_param($conn, $param, $default) {
 	return $conn->real_escape_string($_GET[$param]);
 }
+
+function clean_param_post($conn, $param, $default = null) {
+	return $conn->real_escape_string($_POST[$param]);
+}

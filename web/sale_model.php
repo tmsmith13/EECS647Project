@@ -30,4 +30,13 @@ class SaleModel extends Model {
 		return empty($result) ? null : $result[0];
 	}
 
+	public static function Insert($sale) {
+		$query = "
+				INSERT INTO sales (customer_id, employee_id, vehicle_id, subtotal, total, commission, sale_date)
+				VALUES ({$sale['customer_id']}, {$sale['employee_id']}, {$sale['vehicle_id']}, {$sale['subtotal']}, {$sale['total']}, {$sale['commission']}, '{$sale['sale_date']}')
+		";
+		global $conn;
+		$conn->query($query);
+	}
+
 }

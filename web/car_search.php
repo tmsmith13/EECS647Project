@@ -5,7 +5,7 @@ $makes = Model::Select('makes', array('make_name'), NULL);
 ?>
 
 <div class="left_pane_container">
-	<p id="db_car_search">Search Car Database</p>
+	<h1>Search Car Database</h1>
 
 	<div class="search_form">
 
