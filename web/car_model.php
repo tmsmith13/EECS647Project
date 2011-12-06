@@ -3,7 +3,7 @@ require_once('model.php');
 
 class CarModel extends Model {
 
-    public static $vehicle_columns = array('vehicle_id','feature_set','model_id','engine_id','transmission_id',
+    public static $vehicle_columns = array('vehicle_id','BIN(feature_set) AS feature_set','model_id','engine_id','transmission_id',
                                            'brake_id','model_year','vehicle_condition','body_color',
                                            'hwy_mpg','city_mpg','fuel_tank_size',
                                            'advertised_sale_price','miles');

@@ -62,7 +62,7 @@ $brakes = $result['brakes'];
 	</tr>
 	<tr>
 	<? foreach($features as $f): ?>
-                <td><?= ( (1 << $f['string_position']) & $basic['feature_set']) ? 'Yes' : 'No' ?></td>
+     <td><?= ( (1 << $f['string_position']) & intval($basic[0]['feature_set'])) ? 'Yes' : 'No' ?></td>
 	<? endforeach ?>
 	</tr>
 </table>
