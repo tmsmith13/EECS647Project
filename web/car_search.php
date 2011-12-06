@@ -143,7 +143,7 @@
 					<label>Fuel System:</label>
 					<select type="text" name="fuel_type" id="fuel_type">
 						<option>Fuel injected</option>
-						<option>Carborated</option>
+						<option>Carburated</option>
 						<option>Hybrid-Electric</option>
 						<option selected="yes"></option>
 					</select>

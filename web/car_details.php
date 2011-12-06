@@ -19,7 +19,7 @@ $brakes = $result['brakes'];
 <h1>Car Details</h1>
 <h2>Basic Information</h2>
 <? if (!empty($basic)): ?>
-<table class="tabular" border="1">
+<table class="tabular" border="1" width=100%>
 	<tr>
 		<th>Make</th>
 		<th>Model</th>
@@ -51,10 +51,11 @@ $brakes = $result['brakes'];
 	</tr>
 	<? endforeach ?>
 </table>
+    <br>
 <? endif ?>
 <h2>Features</h2>
 <? if (!empty($features)): ?>
-<table class="tabular" border="1">
+<table class="tabular" border="1" width=100%>
 	<tr>
 	<? foreach($features as $f): ?>
 		<th><?= $f['feature'] ?></th>
@@ -66,10 +67,11 @@ $brakes = $result['brakes'];
 	<? endforeach ?>
 	</tr>
 </table>
+    <br>
 <? endif ?>
 <h2>Engine</h2>
 <? if (!empty($engine)): ?>
-<table class="tabular" border="1">
+<table class="tabular" border="1" width=100%>
 	<tr>
 		<th>Displacement</th>
 		<th>Fuel System</th>
@@ -89,10 +91,11 @@ $brakes = $result['brakes'];
 	</tr>
 	<? endforeach ?>
 </table>
+    <br>
 <? endif ?>
 <h2>Transmission</h2>
 <? if (!empty($transmission)): ?>
-<table class="tabular" border="1">
+<table class="tabular" border="1" width=100%>
 	<tr>
 		<th>Drivetrain</th>
 		<th>Type</th>
@@ -106,10 +109,11 @@ $brakes = $result['brakes'];
 	</tr>
 	<? endforeach ?>
 </table>
+    <br>
 <? endif ?>
 <h2>Brakes</h2>
 <? if (!empty($brakes)): ?>
-<table class="tabular" border="1">
+<table class="tabular" border="1" width=100%>
 	<tr>
 		<th>ABS System</th>
 		<th>Front Brake Type</th>
@@ -123,5 +127,6 @@ $brakes = $result['brakes'];
 	</tr>
 	<? endforeach ?>
 </table>
+    <br>
 <? endif ?>
 <?php include('page_footer.php'); ?>

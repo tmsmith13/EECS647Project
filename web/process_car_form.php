@@ -43,7 +43,7 @@ if(!empty($color))
 
 $where = join(' AND ', $wheres);
 
-echo $where;
+//echo $where;
 
 $que ="
 SELECT vehicle_id,model_year,make_name, model_name,body_type,vehicle_condition,advertised_sale_price
@@ -54,7 +54,7 @@ NATURAL JOIN transmissions
 NATURAL JOIN engines
 WHERE $where
 		";
-echo $que;
+//echo $que;
 $result = mysql_query($que);
 
 if (!$result) {
@@ -81,7 +81,7 @@ while($row = mysql_fetch_assoc($result))
 		<tr>
 			<td><center><?= $car['vehicle_id'] ?></center></td>
 			<td>
-				<center><a href"#">
+				<center><a href="<?= $apppath ?>car_details.php?vehicle_id=<?= $car['vehicle_id'] ?>">
 					<i><?= $car['vehicle_condition'] ?>&nbsp&nbsp</i>
 					<?= $car['model_year']." ".$car['make_name']." ".$car['model_name'] ?></a>
 				</center>
