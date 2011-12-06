@@ -9,9 +9,5 @@ function check_login() {
 }
 
 function clean_param($conn, $param, $default) {
-	return $conn->real_escape_string(
-		isset($_GET[$param]) ? $_GET[$param] :
-		isset($_POST[$param]) ? $_POST[$param] :
-		$default
-	);
+	return $conn->real_escape_string($_GET[$param]);
 }

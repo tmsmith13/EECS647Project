@@ -1,15 +1,11 @@
 <?php
-require_once('session_check.php');
 
 require_once('page_setup.php');
 $title = 'Car Details';
 include('page_header.php');
 
 require_once('model.php');
-$page = clean_param($conn, 'page', 1);
-$perpage = clean_param($conn, 'perpage', 30);
-
-$vehicle_id = mysql_real_escape_string($_GET['vehicle_id']);
+$vehicle_id = clean_param($conn, 'vehicle_id', 1);
 
 require_once('car_model.php');
 $result = CarModel::GetCar($vehicle_id);
@@ -47,29 +43,30 @@ $brakes = $result['brakes'];
 		<td><?= $b['model_year'] ?></td>
 		<td><?= $b['vehicle_condition'] ?></td>
 		<td><?= $b['body_color'] ?></td>
-		<td class="numerical"><?= $sale['hwy_mpg'] ?></td>
-		<td class="numerical"><?= $sale['city_mpg'] ?></td>
-		<td class="numerical"><?= $sale['fuel_tank_size'] ?></td>
-		<td class="numerical"><?= $sale['advertised_same_price'] ?></td>
+		<td class="numerical"><?= $b['hwy_mpg'] ?></td>
+		<td class="numerical"><?= $b['city_mpg'] ?></td>
+		<td class="numerical"><?= $b['fuel_tank_size'] ?></td>
+		<td class="numerical"><?= $b['miles'] ?></td>
+		<td class="numerical"><?= $b['advertised_sale_price'] ?></td>
 	</tr>
 	<? endforeach ?>
 </table>
-<? endif
+<? endif ?>
 <h2>Features</h2>
 <? if (!empty($features)): ?>
 <table class="tabular" border="1">
-	<? foreach($features as $f): ?>
 	<tr>
+	<? foreach($features as $f): ?>
 		<th><?= $f['feature'] ?></th>
-	</tr>
 	<? endforeach ?>
-	<? foreach($features as $f): ?>
+	</tr>
 	<tr>
+	<? foreach($features as $f): ?>
                 <td><?= ( (1 << $f['string_position']) & $basic['feature_set']) ? 'Yes' : 'No' ?></td>
-	</tr>
 	<? endforeach ?>
+	</tr>
 </table>
-<? endif
+<? endif ?>
 <h2>Engine</h2>
 <? if (!empty($engine)): ?>
 <table class="tabular" border="1">
@@ -86,13 +83,13 @@ $brakes = $result['brakes'];
 		<td class="numerical"><?= $e['displacement'] ?></td>
 		<td><?= $e['fuel_system'] ?></td>
 		<td class="numerical"><?= $e['horsepower'] ?></td>
-		<td class="numerical"><?= $e['Torque'] ?></td>
+		<td class="numerical"><?= $e['torque'] ?></td>
 		<td><?= $e['cylinders'] ?></td>
 		<td><?= $e['shape'] ?></td>
 	</tr>
 	<? endforeach ?>
 </table>
-<? endif
+<? endif ?>
 <h2>Transmission</h2>
 <? if (!empty($transmission)): ?>
 <table class="tabular" border="1">
@@ -109,7 +106,7 @@ $brakes = $result['brakes'];
 	</tr>
 	<? endforeach ?>
 </table>
-<? endif
+<? endif ?>
 <h2>Brakes</h2>
 <? if (!empty($brakes)): ?>
 <table class="tabular" border="1">
@@ -126,5 +123,5 @@ $brakes = $result['brakes'];
 	</tr>
 	<? endforeach ?>
 </table>
-<? endif // 1+ sales ?>
+<? endif ?>
 <?php include('page_footer.php'); ?>

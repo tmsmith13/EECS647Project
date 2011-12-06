@@ -16,7 +16,7 @@ class CarModel extends Model {
 
     public static $engine_columns = array('engine_id','displacement','fuel_system','horsepower','torque','cylinders','shape');
 
-    public static $brake_columns = array('brake_id','brake_abs_system','front_brake_type','rear_brake_type');
+    public static $brakes_columns = array('brake_id','brake_abs_system','front_brake_type','rear_brake_type');
 
     public static $transmission_columns = array('transmission_id','drivetrain','transmission_type','num_gears');
 
@@ -28,22 +28,22 @@ class CarModel extends Model {
             );
         
         // Vehicle query
-        $columns = array_merge($vehicle_columns, $model_columns, $make_columns);
+        $columns = array_merge(self::$vehicle_columns, self::$model_columns, self::$make_columns);
         $options['joins'] = array('models','makes');
         $result['vehicle'] = parent::Select('vehicles', $columns, $options);
 
         // Engine query
-        $columns = $engine_columns;
+        $columns = self::$engine_columns;
         $options['joins'] = array('engines');
         $result['engine'] = parent::Select('vehicles', $columns, $options);
 
         // Transmission query
-        $columns = $transmission_columns;
+        $columns = self::$transmission_columns;
         $options['joins'] = array('transmissions');
         $result['transmission'] = parent::Select('vehicles', $columns, $options);
 
         // Brakes query
-        $columns = $brakes_columns;
+        $columns = self::$brakes_columns;
         $options['joins'] = array('brakes');
         $result['brakes'] = parent::Select('vehicles', $columns, $options);
 
