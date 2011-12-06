@@ -320,11 +320,7 @@
         </div><!--main_body_container-->
 		
 		
-		<div class="footer">
-		This is footer : ignore the dev. colors of the page for now. It helps me see where things end/start.
-		If you are really board go here :  <a href="fail.html">something fun</a>  :))))
-		</div><!--end footer-->
-		
+	<?php include('page_footer.php'); ?>
 		
     </div><!--end page_container-->    
 </body>  
