@@ -129,7 +129,7 @@ $makes = Model::Select('makes', array('make_name'), NULL);
 				</li>
 
 				<li>
-					<input type="submit" class="button" id="submit_btn" value="Send" />
+					<input type="submit" class="button" id="submit_btn" value="Search" />
 					<input type="reset" value="reset"><br>
 				</li>
 			</ul>
