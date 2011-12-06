@@ -1,3 +1,9 @@
+<?php
+require_once('model.php');
+
+$makes = Model::Select('makes', array('make_name'), NULL);
+?>
+
 <div class="left_pane_container">
 	<p id="db_car_search">Search Car Database</p>
 
@@ -8,85 +14,9 @@
 				<li>
 					<label>Make</label>
 					<select type="text" id="make" name="make">
-					<option value="AMC">AMC</option>
-					<option value="Acura">Acura</option>
-					<option value="Alfa%20Romeo">Alfa Romeo</option>
-					<option value="Aston%20Martin">Aston Martin</option>
-					<option value="Audi">Audi</option>
-					<option value="Austin">Austin</option>
-					<option value="Austin%20Healey">Austin Healey</option>
-					<option value="BMW">BMW</option>
-					<option value="Bentley">Bentley</option>
-					<option value="Bugatti">Bugatti</option>
-					<option value="Buick">Buick</option>
-					<option value="Cadillac">Cadillac</option>
-					<option value="Chevrolet">Chevrolet</option>
-					<option value="Chrysler">Chrysler</option>
-					<option value="Citroen">Citroen</option>
-					<option value="Cord">Cord</option>
-					<option value="Daewoo">Daewoo</option>
-					<option value="Datsun">Datsun</option>
-					<option value="DeLorean">DeLorean</option>
-					<option value="DeSoto">DeSoto</option>
-					<option value="Dodge">Dodge</option>
-					<option value="Eagle">Eagle</option>
-					<option value="Edsel">Edsel</option>
-					<option value="Ferrari">Ferrari</option>
-					<option value="Fiat">Fiat</option>
-					<option value="Ford">Ford</option>
-					<option value="GMC">GMC</option>
-					<option value="Geo">Geo</option>
-					<option value="Honda">Honda</option>
-					<option value="Hummer">Hummer</option>
-					<option value="Hyundai">Hyundai</option>
-					<option value="Infiniti">Infiniti</option>
-					<option value="International%20Harvester">International Harvester</option>
-					<option value="Isuzu">Isuzu</option>
-					<option value="Jaguar">Jaguar</option>
-					<option value="Jeep">Jeep</option>
-					<option value="Kia">Kia</option>
-					<option value="Lamborghini">Lamborghini</option>
-					<option value="Lancia">Lancia</option>
-					<option value="Land%20Rover">Land Rover</option>
-					<option value="Lexus">Lexus</option>
-					<option value="Lincoln">Lincoln</option>
-					<option value="Lotus">Lotus</option>
-					<option value="MG">MG</option>
-					<option value="Maserati">Maserati</option>
-					<option value="Maybach">Maybach</option>
-					<option value="Mazda">Mazda</option>
-					<option value="Mercedes%2DBenz">Mercedes-Benz</option>
-					<option value="Mercury">Mercury</option>
-					<option value="Mini">Mini</option>
-					<option value="Mitsubishi">Mitsubishi</option>
-					<option value="Nash">Nash</option>
-					<option value="Nissan">Nissan</option>
-					<option value="Oldsmobile">Oldsmobile</option>
-					<option value="Opel">Opel</option>
-					<option value="Other%20Makes">Other Makes</option>
-					<option value="Packard">Packard</option>
-					<option value="Peugeot">Peugeot</option>
-					<option value="Plymouth">Plymouth</option>
-					<option value="Pontiac">Pontiac</option>
-					<option value="Porsche">Porsche</option>
-					<option value="Ram">Ram</option>
-					<option value="Renault">Renault</option>
-					<option value="Replica%20%26%20Kit%20Makes">Replica &amp; Kit Makes</option>
-					<option value="Rolls%2DRoyce">Rolls-Royce</option>
-					<option value="Saab">Saab</option>
-					<option value="Saturn">Saturn</option>
-					<option value="Scion">Scion</option>
-					<option value="Shelby">Shelby</option>
-					<option value="Smart">Smart</option>
-					<option value="Studebaker">Studebaker</option>
-					<option value="Subaru">Subaru</option>
-					<option value="Suzuki">Suzuki</option>
-					<option value="Tesla">Tesla</option>
-					<option value="Toyota">Toyota</option>
-					<option value="Triumph">Triumph</option>
-					<option value="Volkswagen">Volkswagen</option>
-					<option value="Volvo">Volvo</option>
-					<option value="Willys">Willys</option>
+    <? foreach ($makes as $make): ?>
+    <option value="<?= $make['make_name'] ?>"><?= $make['make_name'] ?></option>
+    <? endforeach ?>
 					<option selected="yes"></option>
 					</select>
 				</li>
